@@ -32,7 +32,7 @@
     <ClInclude Include="src\composite\RawImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\spectrum_db\ColorSpectrum.h">
+    <ClInclude Include="src\color_spectrum\ColorSpectrum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sky\LightSources.h">
@@ -41,16 +41,19 @@
     <ClInclude Include="src\sky\Sky.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\spectrum_db\ColorSpectrumConverter.h">
+    <ClInclude Include="src\color_spectrum\ColorSpectrumConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\spectrum_db\ColorSpectrumDB.h">
+    <ClInclude Include="src\color_spectrum\ColorSpectrumDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\raw_texture_converters\RGBAToRawConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\composite\RawCompositeImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

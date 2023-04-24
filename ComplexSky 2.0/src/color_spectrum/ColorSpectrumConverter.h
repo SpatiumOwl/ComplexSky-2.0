@@ -1,10 +1,10 @@
 #pragma once
 #include<vector>
-#include "spectrum_db/ColorSpectrum.h"
+#include "color_spectrum/ColorSpectrum.h"
 
 namespace cs
 {
-	namespace spectrum_db
+	namespace color_spectrum
 	{
 		class ColorSpectrumConverter
 		{

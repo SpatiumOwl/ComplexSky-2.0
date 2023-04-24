@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h" />
+    <ClInclude Include="src\composite\RawCompositeImage.h" />
     <ClInclude Include="src\composite\RawImage.h" />
     <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h" />
     <ClInclude Include="src\raw_texture_converters\RGBAToRawConverter.h" />
@@ -142,9 +143,9 @@
     <ClInclude Include="src\sky\Clouds.h" />
     <ClInclude Include="src\sky\LightSources.h" />
     <ClInclude Include="src\sky\Sky.h" />
-    <ClInclude Include="src\spectrum_db\ColorSpectrum.h" />
-    <ClInclude Include="src\spectrum_db\ColorSpectrumConverter.h" />
-    <ClInclude Include="src\spectrum_db\ColorSpectrumDB.h" />
+    <ClInclude Include="src\color_spectrum\ColorSpectrum.h" />
+    <ClInclude Include="src\color_spectrum\ColorSpectrumConverter.h" />
+    <ClInclude Include="src\color_spectrum\ColorSpectrumDB.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

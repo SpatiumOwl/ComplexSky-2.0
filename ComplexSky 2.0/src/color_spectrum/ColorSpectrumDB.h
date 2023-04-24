@@ -9,7 +9,7 @@ using namespace std;
 
 namespace cs
 {
-	namespace spectrum_db
+	namespace color_spectrum
 	{
 		class ColorSpectrumDB
 		{
