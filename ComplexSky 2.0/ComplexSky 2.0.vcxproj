@@ -136,6 +136,8 @@
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h" />
     <ClInclude Include="src\composite\RawImage.h" />
+    <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h" />
+    <ClInclude Include="src\raw_texture_converters\RGBAToRawConverter.h" />
     <ClInclude Include="src\sky\Atmosphere.h" />
     <ClInclude Include="src\sky\Clouds.h" />
     <ClInclude Include="src\sky\LightSources.h" />

@@ -47,5 +47,11 @@
     <ClInclude Include="src\spectrum_db\ColorSpectrumDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\raw_texture_converters\RGBAToRawConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

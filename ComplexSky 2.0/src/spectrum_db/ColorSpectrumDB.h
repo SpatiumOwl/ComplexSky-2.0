@@ -46,7 +46,7 @@ namespace cs
 			}
 
 		public:
-			inline ColorSpectrumDB* GetInstance()
+			static inline ColorSpectrumDB* GetInstance()
 			{
 				if (ColorSpectrumDB::db == nullptr)
 					ColorSpectrumDB::db = new ColorSpectrumDB();
