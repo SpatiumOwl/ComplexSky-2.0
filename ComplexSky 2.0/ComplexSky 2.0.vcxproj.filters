@@ -44,5 +44,8 @@
     <ClInclude Include="src\spectrum_db\ColorSpectrumConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\spectrum_db\ColorSpectrumDB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

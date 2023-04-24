@@ -142,6 +142,7 @@
     <ClInclude Include="src\sky\Sky.h" />
     <ClInclude Include="src\spectrum_db\ColorSpectrum.h" />
     <ClInclude Include="src\spectrum_db\ColorSpectrumConverter.h" />
+    <ClInclude Include="src\spectrum_db\ColorSpectrumDB.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
