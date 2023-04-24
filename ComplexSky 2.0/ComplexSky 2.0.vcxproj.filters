@@ -41,5 +41,8 @@
     <ClInclude Include="src\sky\Sky.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\spectrum_db\ColorSpectrumConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
