@@ -4,7 +4,7 @@
 
 namespace cs
 {
-	namespace spectrum_db
+	namespace color_spectrum
 	{
 		struct ColorSpectrum
 		{

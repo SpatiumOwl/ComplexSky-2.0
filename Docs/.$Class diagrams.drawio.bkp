@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-04-24T13:45:00.831Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="NcirB5aYO9dXnEd2DC2r" version="21.1.2" type="device" pages="8">
+<mxfile host="Electron" modified="2023-04-24T13:49:28.147Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="zf9e5dDg4s3VcgGNEFhc" version="21.1.2" type="device" pages="8">
   <diagram id="9wK-Dreh1ihX0EcdUHxR" name="RawTextureConverters">
     <mxGraphModel dx="1114" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -301,8 +301,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="-A7QL26LqU0uknvF6ZU8" name="SpectrumDB">
-    <mxGraphModel dx="1114" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="-A7QL26LqU0uknvF6ZU8" name="ColorSpectrum">
+    <mxGraphModel dx="550" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -501,7 +501,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="0ja5H0AbbZNoE_hkBHnO" name="Composite">
-    <mxGraphModel dx="1114" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="550" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
