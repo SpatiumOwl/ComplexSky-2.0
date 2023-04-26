@@ -132,11 +132,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexSky 2.0.cpp" />
+    <ClCompile Include="src\composite_camera\PerlinNoiseGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h" />
     <ClInclude Include="src\composite\RawCompositeImage.h" />
     <ClInclude Include="src\composite\RawImage.h" />
+    <ClInclude Include="src\composite_camera\PerlinNoiseGenerator.h" />
     <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h" />
     <ClInclude Include="src\raw_texture_converters\RGBAToRawConverter.h" />
     <ClInclude Include="src\sky\Atmosphere.h" />
