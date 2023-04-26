@@ -140,6 +140,7 @@
     <ClInclude Include="src\composite\RawImage.h" />
     <ClInclude Include="src\composite_camera\CompositeCamera.h" />
     <ClInclude Include="src\composite_camera\PerlinNoiseGenerator.h" />
+    <ClInclude Include="src\composite_processing\RGBACompositeImage.h" />
     <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h" />
     <ClInclude Include="src\raw_texture_converters\RGBAToRawConverter.h" />
     <ClInclude Include="src\sky\Atmosphere.h" />
