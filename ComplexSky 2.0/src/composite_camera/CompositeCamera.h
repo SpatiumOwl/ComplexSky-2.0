@@ -20,7 +20,7 @@ namespace cs
 		private:
 			void RenderLight();
 			void RenderStarAmbience();
-			void CreateCloudMap1D(std::vector<std::vector<double>>* cloudMap);
+			void CreateCloudMap1D(std::vector<double>* cloudMap);
 			void CreateShadedCloudMap();
 
 		public:
