@@ -1,4 +1,5 @@
 #pragma once
+#include <utility>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include "composite/RawImage.h"
@@ -10,7 +11,7 @@ namespace cs
 	{
 		class RGBAToRawConverter
 		{
-			composite::RawImage Convert(cv::Mat4d image, cv::Vec2d dynamicRange);
+			composite::RawImage Convert(cv::Mat4d image, std::pair<double, double> dynamicRange);
 		};
 	}
 }

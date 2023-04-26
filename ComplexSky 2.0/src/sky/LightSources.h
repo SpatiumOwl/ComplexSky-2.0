@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <utility>
 #include "composite/RawImage.h"
 
 namespace cs
@@ -26,7 +25,7 @@ namespace cs
 		};
 		struct PointLightSource : ColoredLightSource
 		{
-			cv::Vec2d pos;
+			std::pair<double, double> pos;
 			LightSourceType type = LightSourceType::CS_POINT;
 		};
 		struct AmbientLightSource : ColoredLightSource
@@ -36,8 +35,8 @@ namespace cs
 		struct TextureLightSource : LightSource
 		{
 			composite::RawImage texture;
-			cv::Vec2d pos;
-			cv::Vec2d size;
+			std::pair<double, double> pos;
+			std::pair<double, double> size;
 			LightSourceType type = LightSourceType::CS_TEXTURE;
 		};
 	}

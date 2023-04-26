@@ -1,6 +1,5 @@
 #pragma once
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <utility>
 #include "composite/Layers.h"
 #include "composite/RawImage.h"
 
@@ -12,11 +11,11 @@ namespace cs
 		{
 		private:
 			FolderLayer<RawImage> mainFolder;
-			cv::Vec2i resolutionPx;
+			std::pair<unsigned int, unsigned int> resolutionPx;
 		public:
 			color_spectrum::ColorSpectrum* colorSpectrum;
 			bool limitedDynamicRange;
-			cv::Vec2d dynamicRange;
+			std::pair<double, double> dynamicRange;
 
 			RawCompositeImage();
 			inline void PushLayer(Layer<RawImage>* layer)
@@ -25,9 +24,9 @@ namespace cs
 			}
 			inline void SetPixelSize(unsigned int width, unsigned int height)
 			{
-				if (width > 0 && height > 0) resolutionPx = cv::Vec2i(height, width);
+				if (width > 0 && height > 0) resolutionPx = std::pair<unsigned int, unsigned int>(height, width);
 			}
-			inline cv::Vec2i GetPixelSize() { return resolutionPx; }
+			inline std::pair<unsigned int, unsigned int> GetPixelSize() { return resolutionPx; }
 		};
 	}
 }

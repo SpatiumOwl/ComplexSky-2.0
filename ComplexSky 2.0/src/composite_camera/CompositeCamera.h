@@ -1,6 +1,6 @@
 #pragma once
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <utility>
+#include <vector>
 #include "color_spectrum/ColorSpectrum.h"
 #include "composite/RawCompositeImage.h"
 #include "sky/Sky.h"
@@ -13,24 +13,24 @@ namespace cs
 		{
 		public:
 			color_spectrum::ColorSpectrum* targetSpectrum;
-			cv::Vec2d resolutionPx;
+			std::pair<unsigned int, unsigned int> resolutionPx;
 			bool limitDynamicRange;
-			cv::Vec2d dynamicRange;
+			std::pair<double, double> dynamicRange;
 
 		private:
 			void RenderLight();
 			void RenderStarAmbience();
-			void CreateCloudMap1D(cv::Mat1d* cloudMap);
+			void CreateCloudMap1D(std::vector<std::vector<double>>* cloudMap);
 			void CreateShadedCloudMap();
 
 		public:
 			CompositeCamera(color_spectrum::ColorSpectrum* targetSpectrum,
-				cv::Vec2i resolutionPx,
-				cv::Vec2d dynamicRange);
+				std::pair<unsigned int, unsigned int> resolutionPx,
+				std::pair<double, double> dynamicRange);
 			CompositeCamera(color_spectrum::ColorSpectrum* targetSpectrum,
-				cv::Vec2i resolutionPx);
+				std::pair<unsigned int, unsigned int> resolutionPx);
 			composite::RawCompositeImage Capture(sky::Sky sky,
-				cv::Vec4d borderCoordinates);
+				std::vector<double> borderCoordinates);
 
 		};
 	}

@@ -1,7 +1,6 @@
 #pragma once
 #include "color_spectrum/ColorSpectrum.h"
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <utility>
 #include <vector>
 
 namespace cs
@@ -12,8 +11,8 @@ namespace cs
 		{
 			color_spectrum::ColorSpectrum colorSpectrum;
 			bool limitedDynamicRange;
-			cv::Vec2d dynamicRange;
-			cv::Vec2i resolutionPx;
+			std::pair<double, double> dynamicRange;
+			std::pair<unsigned int, unsigned int> resolutionPx;
 			std::vector<std::vector<double>> image;
 		};
 	}

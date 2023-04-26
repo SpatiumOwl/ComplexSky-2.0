@@ -1,8 +1,7 @@
 #pragma once
 #include <list>
 #include <string>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <utility>
 
 namespace cs
 {
@@ -37,14 +36,14 @@ namespace cs
 			T image;
 			bool isEmpty = 1;
 		public:
-			cv::Vec2i offset;
+			std::pair<int, int> offset;
 
 			inline ImageLayer() { isFolder = 0; }
 			inline ImageLayer(std::string name, BlendingMode blendingMode) : Layer(name, blendingMode) { isFolder = 0; }
 			inline ~ImageLayer() {}
 
 			inline T* GetImage() { return &image; }
-			inline void SetImage(cv::Mat4d* image) { image = *image; isEmpty = 0; }
+			inline void SetImage(T* image) { image = *image; isEmpty = 0; }
 			inline bool IsEmpty() { return isEmpty; }
 		};
 		template<typename T>
