@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexSky 2.0.cpp" />
+    <ClCompile Include="src\color_spectrum\ColorSpectrumDB.cpp" />
     <ClCompile Include="src\composite_camera\PerlinNoiseGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>

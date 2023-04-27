@@ -21,6 +21,9 @@
     <ClCompile Include="src\composite_camera\PerlinNoiseGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\color_spectrum\ColorSpectrumDB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h">
