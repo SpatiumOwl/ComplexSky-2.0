@@ -15,14 +15,14 @@ namespace cs
 		{
 		private:
 			static ColorSpectrumDB* db;
-			map <string, ColorSpectrum> spectrums;
+			map <string, ColorSpectrum*> spectrums;
 			map <pair<string, string>, 
-				ColorSpectrumConverter> converters;
+				ColorSpectrumConverter*> converters;
 
 			ColorSpectrumDB();
 			
-			bool ConverterGenerated
-			(ColorSpectrum* source, ColorSpectrum* target);
+			bool ConverterPresent
+			(string source, string target);
 			
 			void GenerateConverter
 			(ColorSpectrum* source, ColorSpectrum* target);
@@ -38,7 +38,7 @@ namespace cs
 				return db;
 			}
 			
-			void AddSpectrum(ColorSpectrum colorSpectrum);
+			void AddSpectrum(ColorSpectrum* colorSpectrum);
 			ColorSpectrumConverter* GetConverter(string source, string target);
 			ColorSpectrum* GetSpectrum(string name);
 		};

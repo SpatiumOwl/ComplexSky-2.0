@@ -6,33 +6,51 @@ namespace cs
 	{
 		ColorSpectrumDB::ColorSpectrumDB()
 		{
-			spectrums = map <string, ColorSpectrum>();
-			converters = map <pair<string, string>, ColorSpectrumConverter>();
-		}
-		bool ColorSpectrumDB::ConverterGenerated
-		(ColorSpectrum* source, ColorSpectrum* target)
+			spectrums = map <string, ColorSpectrum*>();
+			converters = map <pair<string, string>, ColorSpectrumConverter*>();
+		}		
+
+		void ColorSpectrumDB::AddSpectrum(ColorSpectrum* colorSpectrum)
 		{
-			return (converters.count(pair<string, string>
-				(source->name, target->name)) > 0);
+			if (SpectrumPresent(colorSpectrum->name))
+				spectrums[colorSpectrum->name] = colorSpectrum;
 		}
-		void ColorSpectrumDB::GenerateConverter
-		(ColorSpectrum* source, ColorSpectrum* target)
+		ColorSpectrum* ColorSpectrumDB::GetSpectrum(string name)
 		{
-			converters[pair<string, string>(source->name, target->name)] =
-				ColorSpectrumConverter(source, target);
+			if (SpectrumPresent(name))
+				return spectrums[name];
+			return nullptr;
 		}
 		bool ColorSpectrumDB::SpectrumPresent(string name)
 		{
 			return (spectrums.count(name) > 0);
 		}
-		void ColorSpectrumDB::AddSpectrum(ColorSpectrum colorSpectrum)
-		{
-			if (SpectrumPresent(colorSpectrum.name))
-				spectrums[colorSpectrum.name] = colorSpectrum;
-		}
+
 		ColorSpectrumConverter* ColorSpectrumDB::GetConverter(string source, string target)
 		{
+			if (ConverterPresent(source, target))
+				return converters[pair<string, string>(source, target)];
 
+			if (SpectrumPresent(source) && SpectrumPresent(target))
+			{
+				GenerateConverter(spectrums[source], spectrums[target]);
+				return converters[pair<string, string>(source, target)];
+			}
+
+			return nullptr;
 		}
+		bool ColorSpectrumDB::ConverterPresent
+		(string source, string target)
+		{
+			return (converters.count(pair<string, string>
+				(source, target)) > 0);
+		}		
+		void ColorSpectrumDB::GenerateConverter
+		(ColorSpectrum* source, ColorSpectrum* target)
+		{
+			converters[pair<string, string>(source->name, target->name)] =
+				new ColorSpectrumConverter(source, target);
+		}
+		
 	}
 }
