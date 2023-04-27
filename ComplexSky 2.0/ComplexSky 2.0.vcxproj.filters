@@ -24,6 +24,9 @@
     <ClCompile Include="src\color_spectrum\ColorSpectrumDB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\math_tools\MatrixOperations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\exporters\RGBAComposer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math_tools\MatrixOperations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,7 +4,7 @@
 
 namespace cs
 {
-	namespace composite_camera
+	namespace math_tools
 	{
 		double PerlinNoiseGenerator::Noise2f(int x, int y)
 		{

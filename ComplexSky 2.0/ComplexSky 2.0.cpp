@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "math_tools/MatrixOperations.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::vector<std::vector<double>> matrix1(
+        {
+            {1, 2},
+            {4, 1},
+            {3, 4}
+        });
+    std::vector<std::vector<double>> matrix2(
+        {
+            {1, 2, 3},
+            {4, 1, 2.5}
+        });
+    std::vector<std::vector<double>> result = cs::math_tools::MatrixOperations::MultiplyMatrices(&matrix1, &matrix2);
+    int a = 5;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

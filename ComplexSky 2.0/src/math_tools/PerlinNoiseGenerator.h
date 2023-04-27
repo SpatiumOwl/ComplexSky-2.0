@@ -1,7 +1,7 @@
 #pragma once
 namespace cs
 {
-    namespace composite_camera
+    namespace math_tools
     {
         class PerlinNoiseGenerator
         {
