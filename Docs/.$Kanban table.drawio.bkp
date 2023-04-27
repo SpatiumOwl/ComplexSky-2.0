@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-04-27T16:30:33.900Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="s78ijhTijnEnY9uGIc9G" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-04-27T16:54:04.210Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="uz3L_5_hCbx4uf7GHcaT" version="21.1.2" type="device">
   <diagram id="wFE0QG_FPsp0jaGvCLVb" name="Page-1">
     <mxGraphModel dx="1948" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -72,12 +72,12 @@
             <mxGeometry x="20" y="21" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
-        <object label="Put PerlinNoise into math_tools namespace" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-2">
+        <object label="Such empty" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-5">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-6">
             <mxGeometry x="20" y="81" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
-        <object label="Refactor class diagrams to match the new structure" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-3">
+        <object label="Write Integrate functions" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-4">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-6">
             <mxGeometry x="20" y="141" width="260" height="40" as="geometry" />
           </mxCell>
@@ -125,6 +125,16 @@
         <object label="Add MatrixOperations class" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-9">
             <mxGeometry x="20" y="441" width="260" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Put PerlinNoise into math_tools namespace" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-2">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-9">
+            <mxGeometry x="20" y="501" width="260" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Refactor class diagrams to match the new structure" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-3">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-9">
+            <mxGeometry x="20" y="561" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
       </root>

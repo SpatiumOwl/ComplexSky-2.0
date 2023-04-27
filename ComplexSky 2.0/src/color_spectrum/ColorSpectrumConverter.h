@@ -14,9 +14,9 @@ namespace cs
 
 		public:
 
-			ColorSpectrumConverter(ColorSpectrum* source, ColorSpectrum* target);
+			ColorSpectrumConverter(const ColorSpectrum* source, const ColorSpectrum* target);
 			inline ~ColorSpectrumConverter() {}
-			std::vector<double> Convert(std::vector<double> source);
+			std::vector<double> Convert(const std::vector<double>* source);
 		};
 	}
 }

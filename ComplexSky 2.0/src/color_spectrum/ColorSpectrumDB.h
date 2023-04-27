@@ -25,7 +25,7 @@ namespace cs
 			(string source, string target);
 			
 			void GenerateConverter
-			(ColorSpectrum* source, ColorSpectrum* target);
+			(const ColorSpectrum* source, const ColorSpectrum* target);
 			
 			bool SpectrumPresent(string name);
 

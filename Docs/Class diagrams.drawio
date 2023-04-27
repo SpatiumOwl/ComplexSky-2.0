@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-04-27T16:40:37.935Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="f6nF8qYJmSGinm6wGbwp" version="21.1.2" type="device" pages="9">
+<mxfile host="Electron" modified="2023-04-27T16:57:15.919Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="EIXM1uNRO5eRNc_d7xOJ" version="21.1.2" type="device" pages="9">
   <diagram id="xBpeeoNmWK5TZJDFUNut" name="MathTools">
     <mxGraphModel dx="1114" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -367,7 +367,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="-A7QL26LqU0uknvF6ZU8" name="ColorSpectrum">
-    <mxGraphModel dx="1354" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1114" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -401,10 +401,10 @@
         <mxCell id="DzoSQT47LeEfHsVPK7hz-8" value="public" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=3;fontFamily=Times New Roman;fontSize=13;" parent="T43ynAue_Vtt7OHVV37O-5" vertex="1">
           <mxGeometry y="86" width="220" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="DzoSQT47LeEfHsVPK7hz-1" value="ColorSpectrumConverter(&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;ColorSpectrum* source,&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;ColorSpectrum* target)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-5" vertex="1">
+        <mxCell id="DzoSQT47LeEfHsVPK7hz-1" value="ColorSpectrumConverter(&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; const &lt;/span&gt;ColorSpectrum* source,&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; const &lt;/span&gt;ColorSpectrum* target)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-5" vertex="1">
           <mxGeometry y="112" width="220" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="EOs1aE2bhazpIIPYBNOj-1" value="vector&amp;lt;double&amp;gt; &lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;Convert(vector&amp;lt;double&amp;gt; source)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-5" vertex="1">
+        <mxCell id="EOs1aE2bhazpIIPYBNOj-1" value="vector&amp;lt;double&amp;gt; &lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;Convert(const vector&amp;lt;double&amp;gt; source)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-5" vertex="1">
           <mxGeometry y="170" width="220" height="44" as="geometry" />
         </mxCell>
         <mxCell id="T43ynAue_Vtt7OHVV37O-9" value="class ColorSpectrumDB : Singleton" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
@@ -431,7 +431,7 @@
         <mxCell id="T43ynAue_Vtt7OHVV37O-16" value="bool ConverterPresent(string source, string target)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-9" vertex="1">
           <mxGeometry y="164" width="450" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="nPjJCZuye4JFjJVRFHAU-2" value="void GenerateConverter(ColorSpectrum* source, ColorSpectrum* target)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-9" vertex="1">
+        <mxCell id="nPjJCZuye4JFjJVRFHAU-2" value="void GenerateConverter(const ColorSpectrum* source, const ColorSpectrum* target)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-9" vertex="1">
           <mxGeometry y="190" width="450" height="26" as="geometry" />
         </mxCell>
         <mxCell id="5UhM9efVBOnWieenR7mY-4" value="bool SpectrumPresent(string name)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="T43ynAue_Vtt7OHVV37O-9" vertex="1">

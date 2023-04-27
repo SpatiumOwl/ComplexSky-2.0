@@ -46,7 +46,7 @@ namespace cs
 				(source, target)) > 0);
 		}		
 		void ColorSpectrumDB::GenerateConverter
-		(ColorSpectrum* source, ColorSpectrum* target)
+		(const ColorSpectrum* source, const ColorSpectrum* target)
 		{
 			converters[pair<string, string>(source->name, target->name)] =
 				new ColorSpectrumConverter(source, target);
