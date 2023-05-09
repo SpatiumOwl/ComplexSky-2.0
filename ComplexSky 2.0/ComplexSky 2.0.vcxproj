@@ -132,12 +132,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexSky 2.0.cpp" />
+    <ClCompile Include="src\math_tools\Integrator.cpp" />
+    <ClCompile Include="src\math_tools\Interpolator.cpp" />
     <ClCompile Include="src\color_spectrum\ColorSpectrumConverter.cpp" />
     <ClCompile Include="src\math_tools\MatrixOperations.cpp" />
     <ClCompile Include="src\color_spectrum\ColorSpectrumDB.cpp" />
     <ClCompile Include="src\math_tools\PerlinNoiseGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\math_tools\Integrator.h" />
+    <ClInclude Include="src\color_spectrum\ColorSpectrumChannel.h" />
+    <ClInclude Include="src\math_tools\Interpolator.h" />
     <ClInclude Include="src\math_tools\MatrixOperations.h" />
     <ClInclude Include="src\composite\Layers.h" />
     <ClInclude Include="src\composite\RawCompositeImage.h" />

@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-05-09T07:56:49.130Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="ALIDlKDblXYANuPMQXFS" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-09T15:08:51.372Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="xZBHqaR74RmwCjbF2Oxk" version="21.1.2" type="device">
   <diagram id="wFE0QG_FPsp0jaGvCLVb" name="Page-1">
-    <mxGraphModel dx="1964" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1948" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -43,34 +43,33 @@
           </mxCell>
         </object>
         <object label="Make the pre-protection presentation" placeholders="1" id="pLNMyA59S91D-jUSyazH-4">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-2">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
             <mxGeometry x="20" y="381" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="pLNMyA59S91D-jUSyazH-3" value="Pre-protection" style="endArrow=none;html=1;rounded=0;strokeWidth=5;" edge="1" parent="_5mSTuPxr-ZiKRkBDSY7-2">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint y="430.5" as="sourcePoint" />
-            <mxPoint x="300" y="430.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
+        <object label="Pre-protection" placeholders="1" id="pLNMyA59S91D-jUSyazH-5">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#E0E0E0;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#404040;imageHeight=15;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
+            <mxGeometry x="20" y="441" width="260" height="20" as="geometry" />
+          </mxCell>
+        </object>
         <object label="Add scaling function" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-13">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="441" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="481" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Write HubbleToRawConverter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-24">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="501" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="541" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Write RGBAToRawConverter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-25">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="561" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="601" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Write PSDExporter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-22">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="621" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="661" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="DOING" status="In progress" id="_5mSTuPxr-ZiKRkBDSY7-6">
@@ -81,11 +80,6 @@
         <object label="Write ColorSpectrumConverter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-16">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;" parent="_5mSTuPxr-ZiKRkBDSY7-6" vertex="1">
             <mxGeometry x="20" y="21" width="260" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Write Integrate functions" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-4">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;" parent="_5mSTuPxr-ZiKRkBDSY7-6" vertex="1">
-            <mxGeometry x="20" y="81" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="DONE" status="Completed" id="_5mSTuPxr-ZiKRkBDSY7-9">
@@ -144,13 +138,18 @@
           </mxCell>
         </object>
         <object label="Rework the program to introduce the changes of the class diagram (MathTools)" placeholders="1" id="pLNMyA59S91D-jUSyazH-1">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-9">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
             <mxGeometry x="20" y="621" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Rework the program to introduce the changes of the class diagram (ColorSpectrum)" placeholders="1" id="pLNMyA59S91D-jUSyazH-2">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-9">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
             <mxGeometry x="20" y="681" width="260" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Write Integrate functions" placeholders="1" id="-W177HSRyE7rzrqI0KIZ-4">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
+            <mxGeometry x="20" y="741" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
       </root>
