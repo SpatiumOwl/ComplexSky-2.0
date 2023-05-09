@@ -1,7 +1,7 @@
 #pragma once
 #include "ColorSpectrumChannel.h"
-#include<string>
-#include<vector>
+#include <string>
+#include <vector>
 
 namespace cs
 {

@@ -7,7 +7,7 @@ namespace cs
 {
 	namespace math_tools
 	{
-		std::vector<double> Integrator::FindIntersection(
+		std::pair<double, std::vector<double>> Integrator::FindIntersection(
 			std::vector<double> func1, double distance1,
 			std::vector<double> func2, double distance2)
 		{
@@ -23,7 +23,7 @@ namespace cs
 			for (int i = 0; i < intersection.size(); i++)
 				intersection[i] = fmin(newFunc1[i], newFunc2[i]);
 
-			return intersection;
+			return std::pair<double, std::vector<double>>(distance, intersection);
 		}
 
 		std::pair<double, std::pair<std::vector<double>, std::vector<double>>> Integrator::BringToScale(

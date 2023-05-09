@@ -7,7 +7,7 @@ namespace cs
 		static class Integrator
 		{
 		public:
-			static std::vector<double> FindIntersection(
+			static std::pair<double, std::vector<double>> FindIntersection(
 				std::vector<double> func1, double distance1, 
 				std::vector<double> func2, double distance2);
 

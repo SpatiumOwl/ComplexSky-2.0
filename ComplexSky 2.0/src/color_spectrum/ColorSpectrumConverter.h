@@ -1,5 +1,6 @@
 #pragma once
-#include<vector>
+
+#include <vector>
 #include "color_spectrum/ColorSpectrum.h"
 
 namespace cs
