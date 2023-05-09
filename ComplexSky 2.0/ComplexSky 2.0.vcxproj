@@ -132,9 +132,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexSky 2.0.cpp" />
+    <ClCompile Include="src\color_spectrum\ColorSpectrumConverter.cpp" />
     <ClCompile Include="src\math_tools\MatrixOperations.cpp" />
     <ClCompile Include="src\color_spectrum\ColorSpectrumDB.cpp" />
-    <ClCompile Include="src\composite_camera\PerlinNoiseGenerator.cpp" />
+    <ClCompile Include="src\math_tools\PerlinNoiseGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\math_tools\MatrixOperations.h" />
@@ -142,7 +143,7 @@
     <ClInclude Include="src\composite\RawCompositeImage.h" />
     <ClInclude Include="src\composite\RawImage.h" />
     <ClInclude Include="src\composite_camera\CompositeCamera.h" />
-    <ClInclude Include="src\composite_camera\PerlinNoiseGenerator.h" />
+    <ClInclude Include="src\math_tools\PerlinNoiseGenerator.h" />
     <ClInclude Include="src\composite_processing\Raw3c1aToRGBAConverter.h" />
     <ClInclude Include="src\composite_processing\RGBACompositeImage.h" />
     <ClInclude Include="src\exporters\PSDExporter.h" />

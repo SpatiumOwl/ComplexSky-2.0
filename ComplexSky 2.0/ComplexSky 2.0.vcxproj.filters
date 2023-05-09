@@ -18,13 +18,16 @@
     <ClCompile Include="ComplexSky 2.0.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\composite_camera\PerlinNoiseGenerator.cpp">
+    <ClCompile Include="src\math_tools\PerlinNoiseGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\color_spectrum\ColorSpectrumDB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\math_tools\MatrixOperations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\color_spectrum\ColorSpectrumConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,7 +68,7 @@
     <ClInclude Include="src\composite\RawCompositeImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\composite_camera\PerlinNoiseGenerator.h">
+    <ClInclude Include="src\math_tools\PerlinNoiseGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\composite_camera\CompositeCamera.h">

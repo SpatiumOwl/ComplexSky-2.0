@@ -1,4 +1,5 @@
 #pragma once
+#include "ColorSpectrumChannel.h"
 #include<string>
 #include<vector>
 
@@ -9,8 +10,7 @@ namespace cs
 		struct ColorSpectrum
 		{
 			std::string name;
-			std::vector<double> func;
-			double distanceBetweenValues;
+			std::vector<ColorSpectrumChannel> colorChannels;
 		};
 	}
 }
