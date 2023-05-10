@@ -45,6 +45,9 @@
     <ClCompile Include="src\composite_processing\Raw3c1aToRGBAConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\exporters\RGBAComposer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h">

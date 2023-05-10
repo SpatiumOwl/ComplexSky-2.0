@@ -30,7 +30,7 @@ namespace cs
 			{
 				if (size.first > 0 && size.second > 0) resolutionPx = size;
 			}
-			inline std::pair<unsigned int, unsigned int> GetPixelSize(unsigned int width, unsigned int height)
+			inline std::pair<unsigned int, unsigned int> GetPixelSize()
 			{
 				return resolutionPx;
 			}

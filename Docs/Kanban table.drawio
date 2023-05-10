@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-10T15:37:52.707Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="7IKaM1cxCtYgD_Bzvzgh" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-10T17:25:41.741Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="fqIIO8v4BLi31PtnUXsP" version="21.1.2" type="device">
   <diagram id="wFE0QG_FPsp0jaGvCLVb" name="Page-1">
     <mxGraphModel dx="1948" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -60,11 +60,6 @@
         <object label="DOING" status="In progress" id="_5mSTuPxr-ZiKRkBDSY7-6">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=none;fillStyle=solid;fillColor=#006600;" parent="_5mSTuPxr-ZiKRkBDSY7-1" vertex="1">
             <mxGeometry x="300" y="28" width="300" height="1122" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Write RGBAComposer method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-23">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;" parent="_5mSTuPxr-ZiKRkBDSY7-6" vertex="1">
-            <mxGeometry x="20" y="21" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="DONE" status="Completed" id="_5mSTuPxr-ZiKRkBDSY7-9">
@@ -155,6 +150,11 @@
         <object label="Write Raw3c1aToRGBA method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-21">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
             <mxGeometry x="20" y="981" width="260" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Write RGBAComposer method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-23">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
+            <mxGeometry x="20" y="1041" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
       </root>
