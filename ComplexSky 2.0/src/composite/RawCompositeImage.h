@@ -10,9 +10,9 @@ namespace cs
 		class RawCompositeImage
 		{
 		private:
-			FolderLayer<RawImage> mainFolder;
 			std::pair<unsigned int, unsigned int> resolutionPx;
 		public:
+			FolderLayer<RawImage> mainFolder;
 			color_spectrum::ColorSpectrum* colorSpectrum;
 			bool limitedDynamicRange;
 			std::pair<double, double> dynamicRange;
@@ -21,6 +21,10 @@ namespace cs
 			inline void PushLayer(Layer<RawImage>* layer)
 			{
 				mainFolder.layers->push_back(layer);
+			}
+			inline void SetPixelSize(std::pair<unsigned int, unsigned int> size)
+			{
+				if (size.first > 0 && size.second > 0) resolutionPx = size;
 			}
 			inline void SetPixelSize(unsigned int width, unsigned int height)
 			{
