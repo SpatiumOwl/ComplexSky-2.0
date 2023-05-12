@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-05-10T17:23:59.244Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="a_SRjQJF6sfMmsnIEH5e" version="21.1.2" type="device" pages="9">
+<mxfile host="Electron" modified="2023-05-12T07:02:34.496Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="-NHtOiiYpe90WPmzksZ8" version="21.1.2" type="device" pages="9">
   <diagram id="xBpeeoNmWK5TZJDFUNut" name="MathTools">
-    <mxGraphModel dx="552" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1114" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -164,13 +164,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-9" value="struct ColoredLightSource" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontFamily=Times New Roman;fontSize=13;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="660" y="150" width="140" height="78" as="geometry" />
+          <mxGeometry x="630" y="150" width="180" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="fjtUpzhwMhFWf3jZZ5qM-0" value="ColorSpectrum* colorSpectrum" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="SZyjdiMSBCn0XsSWIT7a-9">
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-10" value="vector&lt;double&gt; color" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="SZyjdiMSBCn0XsSWIT7a-9" vertex="1">
-          <mxGeometry y="26" width="140" height="26" as="geometry" />
+          <mxGeometry y="52" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-11" value="double brightness" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="SZyjdiMSBCn0XsSWIT7a-9" vertex="1">
-          <mxGeometry y="52" width="140" height="26" as="geometry" />
+          <mxGeometry y="78" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-13" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Times New Roman;fontSize=13;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="SZyjdiMSBCn0XsSWIT7a-9" target="SZyjdiMSBCn0XsSWIT7a-4" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -182,31 +185,31 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-14" value="struct PointLightSource" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontFamily=Times New Roman;fontSize=13;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="630" y="261" width="160" height="52" as="geometry" />
+          <mxGeometry x="630" y="290" width="180" height="52" as="geometry" />
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-15" value="pair&lt;double, double&gt; pos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="SZyjdiMSBCn0XsSWIT7a-14" vertex="1">
-          <mxGeometry y="26" width="160" height="26" as="geometry" />
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-18" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Times New Roman;fontSize=13;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="SZyjdiMSBCn0XsSWIT7a-14" target="SZyjdiMSBCn0XsSWIT7a-11" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="650" y="-129" as="sourcePoint" />
             <mxPoint x="560" y="211" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="700" y="250" />
-              <mxPoint x="730" y="250" />
+              <mxPoint x="720" y="290" />
+              <mxPoint x="720" y="254" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-19" value="struct AmbientLightSource" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontFamily=Times New Roman;fontSize=13;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="470" y="261" width="140" height="52" as="geometry" />
+          <mxGeometry x="470" y="290" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="SZyjdiMSBCn0XsSWIT7a-23" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;fontFamily=Times New Roman;fontSize=13;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="SZyjdiMSBCn0XsSWIT7a-19" target="SZyjdiMSBCn0XsSWIT7a-11" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="690" y="-27" as="sourcePoint" />
             <mxPoint x="653" y="-26.5" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="540" y="250" />
-              <mxPoint x="730" y="250" />
+              <mxPoint x="540" y="270" />
+              <mxPoint x="720" y="270" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -400,8 +403,7 @@
             <mxPoint x="870" y="140" as="sourcePoint" />
             <mxPoint x="920" y="239" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="715" y="134" />
-              <mxPoint x="715" y="140" />
+              <mxPoint x="718" y="140" />
               <mxPoint x="575" y="140" />
             </Array>
           </mxGeometry>
@@ -951,10 +953,10 @@
         <mxCell id="v6u0pSrcBfLl22JGxaRc-2" value="static Vec2i CalculateNewImageSize(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;    pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
           <mxGeometry y="230" width="380" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-3" value="static Vec4d BlendPixels(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;				    int row, int col, pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-3" value="static Vec4d BlendPixels(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;        int row, int col, pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
           <mxGeometry y="290" width="380" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-4" value="static Vec4d GetPixel(ImageLayer&lt;cv::Mat4d&gt;* image,&#xa;				    int row, int col)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-4" value="static Vec4d GetPixel(ImageLayer&lt;cv::Mat4d&gt;* image,&#xa;        int row, int col)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
           <mxGeometry y="350" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="v6u0pSrcBfLl22JGxaRc-5" value="static Vec4d PorterDuffFunc(Vec4d sourcePixel, &#xa;    Vec4d destinationPixel, BlendingMode blendingMode)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">

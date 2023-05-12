@@ -20,6 +20,7 @@ namespace cs
 		};
 		struct ColoredLightSource : LightSource
 		{
+			color_spectrum::ColorSpectrum* colorSpectrum;
 			std::vector<double> color;
 			double intensity;
 		};
