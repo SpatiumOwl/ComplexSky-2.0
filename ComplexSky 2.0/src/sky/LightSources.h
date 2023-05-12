@@ -18,22 +18,22 @@ namespace cs
 		{
 			LightSourceType type;
 		};
-		struct ColoredLightSource : LightSource
+		struct ColoredLightSource : public LightSource
 		{
 			color_spectrum::ColorSpectrum* colorSpectrum;
-			std::vector<double> color;
+			std::vector<double> normalizedColor;
 			double intensity;
 		};
-		struct PointLightSource : ColoredLightSource
+		struct PointLightSource : public ColoredLightSource
 		{
 			std::pair<double, double> pos;
 			LightSourceType type = LightSourceType::CS_POINT;
 		};
-		struct AmbientLightSource : ColoredLightSource
+		struct AmbientLightSource : public ColoredLightSource
 		{
 			LightSourceType type = LightSourceType::CS_AMBIENT;
 		};
-		struct TextureLightSource : LightSource
+		struct TextureLightSource : public LightSource
 		{
 			composite::RawImage texture;
 			std::pair<double, double> pos;

@@ -6,7 +6,7 @@ namespace cs
         class Clouds
         {
         private:
-            double cloudValueMultiplier = 1;
+            double cloudDensity = 1;
             double cutoff = 0.5;
             double persistence = 0.6;
             unsigned int numberOfOctaves = 6;
@@ -31,11 +31,11 @@ namespace cs
             }
             inline double GetCloudShadingSmoothness() { return cloudShadingSmoothness; }
             //Multiplies the opacity value of the clouds
-            inline void SetCloudValueMultiplier(double value)
+            inline void SetCloudDensity(double value)
             {
-                if (value >= 0) cloudValueMultiplier = value;
+                if (value >= 0) cloudDensity = value;
             }
-            inline double GetCloudValueMultiplier() { return cloudValueMultiplier; }
+            inline double GetCloudDensity() { return cloudDensity; }
             //Closer to 0 - bigger frequencies overtake, 1 - all frequencies are equal
             inline void SetPersistence(double value)
             {

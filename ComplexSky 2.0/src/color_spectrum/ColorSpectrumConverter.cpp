@@ -33,7 +33,7 @@ namespace cs
 				}
 			
 		}
-		std::vector<double> ColorSpectrumConverter::Convert(const std::vector<double>* source)
+		std::vector<double> ColorSpectrumConverter::ConvertRaw(const std::vector<double>* source)
 		{
 			std::vector<std::vector<double>> inputMatrix = { *source };
 
@@ -41,6 +41,26 @@ namespace cs
 				math_tools::MatrixOperations::MultiplyMatrices(&inputMatrix, &function);
 
 			return math_tools::MatrixOperations::TransposeMatrix(&outputMatrix)[0];
+		}
+		std::vector<double> ColorSpectrumConverter::ConvertNormalized(const std::vector<double>* source)
+		{
+			std::vector<double> pixel = ConvertRaw(source);
+
+			double maxVal = -DBL_MAX; int maxInd = -1;
+			for (int i = 0; i < pixel.size(); i++)
+				if (pixel[i] >= maxVal)
+				{
+					maxVal = pixel[i];
+					maxInd = i;
+				}
+
+			if (maxInd == 0)
+				return pixel;
+			
+			for (auto val = pixel.begin(); val != pixel.end(); val++)
+				*val /= maxVal;
+
+			return pixel;
 		}
 	}
 }

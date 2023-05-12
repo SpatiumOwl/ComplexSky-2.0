@@ -17,7 +17,8 @@ namespace cs
 
 			ColorSpectrumConverter(const ColorSpectrum* source, const ColorSpectrum* target);
 			inline ~ColorSpectrumConverter() {}
-			std::vector<double> Convert(const std::vector<double>* source);
+			std::vector<double> ConvertRaw(const std::vector<double>* source);
+			std::vector<double> ConvertNormalized(const std::vector<double>* source);
 		};
 	}
 }
