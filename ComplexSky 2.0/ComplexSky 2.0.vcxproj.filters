@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ComplexSky 2.0.cpp">
+    <ClCompile Include="TestSamples.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\math_tools\PerlinNoiseGenerator.cpp">

@@ -131,7 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ComplexSky 2.0.cpp" />
+    <ClCompile Include="TestSamples.cpp" />
     <ClCompile Include="src\composite\RawCompositeImage.cpp" />
     <ClCompile Include="src\composite_camera\CompositeCamera.cpp" />
     <ClCompile Include="src\composite_processing\Raw3c1aToRGBAConverter.cpp" />

@@ -74,12 +74,12 @@ namespace cs
 
 
 		public:
-			CompositeCamera CreateWithLimitedDynamicRange(
+			static CompositeCamera CreateWithLimitedDynamicRange(
 				color_spectrum::ColorSpectrum* targetSpectrum,
 				std::pair<unsigned int, unsigned int> resolutionPx, 
 				std::pair<double, double> dynamicRange);
 
-			CompositeCamera CreateWithUnlimitedDynamicRange(
+			static CompositeCamera CreateWithUnlimitedDynamicRange(
 				color_spectrum::ColorSpectrum* targetSpectrum,
 				std::pair<unsigned int, unsigned int> resolutionPx);
 
