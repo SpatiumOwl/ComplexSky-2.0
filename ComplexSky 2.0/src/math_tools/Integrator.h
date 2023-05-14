@@ -4,7 +4,7 @@ namespace cs
 {
 	namespace math_tools
 	{
-		static class Integrator
+		class Integrator
 		{
 		public:
 			static std::pair<double, std::vector<double>> FindIntersection(

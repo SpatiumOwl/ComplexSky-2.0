@@ -6,11 +6,11 @@ namespace cs
 {
 	namespace composite_processing
 	{
-		static class Raw3c1aToRGBAConverter
+		class Raw3c1aToRGBAConverter
 		{
 		public:
-			static RGBACompositeImage ConvertRaw3c1aToRGBA
-			(composite::RawCompositeImage rawCompositeImage);
+			static RGBACompositeImage* ConvertRaw3c1aToRGBA
+			(composite::RawCompositeImage* rawCompositeImage);
 		
 			static cv::Mat4d ConvertRaw3c1aToRGBA
 			(composite::RawImage* rawImage);

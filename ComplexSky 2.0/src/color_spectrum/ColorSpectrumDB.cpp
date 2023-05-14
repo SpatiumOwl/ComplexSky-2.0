@@ -4,6 +4,8 @@ namespace cs
 {
 	namespace color_spectrum
 	{
+		ColorSpectrumDB* ColorSpectrumDB::instance = nullptr;
+
 		ColorSpectrumDB::ColorSpectrumDB()
 		{
 			spectrums = map <string, ColorSpectrum*>();

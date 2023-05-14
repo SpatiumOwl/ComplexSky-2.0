@@ -8,7 +8,7 @@ namespace cs
 {
 	namespace exporters
 	{
-		static class RGBAComposer
+		class RGBAComposer
 		{
 		private:
 			static void ComposeImage(

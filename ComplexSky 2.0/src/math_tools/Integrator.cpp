@@ -123,7 +123,7 @@ namespace cs
 			}
 		}
 
-		double FindArea(std::vector<double> func, double distance)
+		double Integrator::FindArea(std::vector<double> func, double distance)
 		{
 			double result = 0;
 

@@ -194,6 +194,8 @@ namespace cs
 				return colorDestination + colorSource - colorSource.mul(colorDestination);
 			case composite::BlendingMode::CS_MULTIPLY:
 				return colorSource.mul(colorDestination);
+			default:
+				return 0;
 			}
 		}
 	}

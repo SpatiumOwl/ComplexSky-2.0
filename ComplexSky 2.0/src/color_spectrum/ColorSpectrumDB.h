@@ -1,7 +1,7 @@
 #pragma once
-#include<map>
-#include<utility>
-#include<string>
+#include <map>
+#include <utility>
+#include <string>
 #include "ColorSpectrumConverter.h"
 #include "ColorSpectrum.h"
 
@@ -14,7 +14,8 @@ namespace cs
 		class ColorSpectrumDB
 		{
 		private:
-			static ColorSpectrumDB* db;
+			static ColorSpectrumDB* instance;
+
 			map <string, ColorSpectrum*> spectrums;
 			map <pair<string, string>, 
 				ColorSpectrumConverter*> converters;
@@ -30,12 +31,17 @@ namespace cs
 			bool SpectrumPresent(string name);
 
 		public:
+			ColorSpectrumDB(const ColorSpectrumDB& obj)
+				= delete;
+
+			void operator=(const ColorSpectrumDB&) = delete;
+
 			static inline ColorSpectrumDB* GetInstance()
 			{
-				if (ColorSpectrumDB::db == nullptr)
-					ColorSpectrumDB::db = new ColorSpectrumDB();
+				if (instance == nullptr)
+					instance = new ColorSpectrumDB();
 
-				return db;
+				return instance;
 			}
 			
 			void AddSpectrum(ColorSpectrum* colorSpectrum);

@@ -9,7 +9,7 @@ namespace cs
 		struct ColorSpectrumChannel
 		{
 			std::vector<double> func;
-			double distanceBetweenValues;
+			double distanceBetweenValues = 0;
 		};
 	}
 }

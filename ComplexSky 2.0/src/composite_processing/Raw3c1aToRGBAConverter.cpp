@@ -4,13 +4,13 @@ namespace cs
 {
 	namespace composite_processing
 	{
-		RGBACompositeImage Raw3c1aToRGBAConverter::ConvertRaw3c1aToRGBA
-		(composite::RawCompositeImage rawCompositeImage)
+		RGBACompositeImage* Raw3c1aToRGBAConverter::ConvertRaw3c1aToRGBA
+		(composite::RawCompositeImage* rawCompositeImage)
 		{
-			RGBACompositeImage rgbaImage = RGBACompositeImage();
-			rgbaImage.SetPixelSize(rawCompositeImage.GetPixelSize());
+			RGBACompositeImage* rgbaImage = new RGBACompositeImage();
+			rgbaImage->SetPixelSize(rawCompositeImage->GetPixelSize());
 
-			ConvertLayer(&(rawCompositeImage.mainFolder), &(rgbaImage.mainFolder));
+			ConvertLayer(&(rawCompositeImage->mainFolder), &(rgbaImage->mainFolder));
 
 			return rgbaImage;
 		}

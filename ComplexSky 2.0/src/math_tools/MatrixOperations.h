@@ -5,7 +5,7 @@ namespace cs
 {
 	namespace math_tools
 	{
-		static class MatrixOperations
+		class MatrixOperations
 		{
 		public:
 			static std::vector<std::vector<double>> MultiplyMatrices(

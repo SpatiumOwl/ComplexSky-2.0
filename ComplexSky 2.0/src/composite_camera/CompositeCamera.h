@@ -38,7 +38,7 @@ namespace cs
 			void CaptureAtmosphereAmbience(sky::Sky* sky, std::pair<double, double> cameraPos,
 				std::pair<double, double> cameraSize, composite::RawCompositeImage* image);
 
-			void CapturePureAtmosphereAmbience(sky::Sky* sky, composite::RawImage* ambienceImage);
+			composite::RawImage* CapturePureAtmosphereAmbience(sky::Sky* sky);
 
 			std::vector<double> CalculateAtmosphereAmbientColor(sky::Sky* sky);
 
@@ -83,7 +83,7 @@ namespace cs
 				color_spectrum::ColorSpectrum* targetSpectrum,
 				std::pair<unsigned int, unsigned int> resolutionPx);
 
-			composite::RawCompositeImage Capture(sky::Sky* sky,
+			composite::RawCompositeImage* Capture(sky::Sky* sky,
 				std::pair<double, double> cameraPos,
 				std::pair<double, double> cameraSize);
 

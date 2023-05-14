@@ -26,25 +26,27 @@ namespace cs
 		}
 
 		CompositeCamera CompositeCamera::CreateWithUnlimitedDynamicRange(
-			color_spectrum::ColorSpectrum* _targetSpectrum,
-			std::pair<unsigned int, unsigned int> _resolutionPx)
+			color_spectrum::ColorSpectrum* targetSpectrum,
+			std::pair<unsigned int, unsigned int> resolutionPx)
 		{
 			return CompositeCamera(targetSpectrum, resolutionPx, 
 				std::pair<double, double>(0, 0), false);
 		}
 
-		composite::RawCompositeImage CompositeCamera::Capture(sky::Sky* sky,
+		composite::RawCompositeImage* CompositeCamera::Capture(sky::Sky* sky,
 			std::pair<double, double> cameraPos, std::pair<double, double> cameraSize)
 		{
-			composite::RawCompositeImage result = composite::RawCompositeImage();
-			result.colorSpectrum = targetSpectrum;
-			result.SetPixelSize(resolutionPx);
-			result.limitedDynamicRange = limitDynamicRange;
-			result.dynamicRange = dynamicRange;
+			composite::RawCompositeImage* result = new composite::RawCompositeImage();
+			result->colorSpectrum = targetSpectrum;
+			result->SetPixelSize(resolutionPx);
+			result->limitedDynamicRange = limitDynamicRange;
+			result->dynamicRange = dynamicRange;
 
-			CaptureAtmosphereAmbience(sky, cameraPos, cameraSize, &result);
-			CaptureLights(sky, cameraPos, cameraSize, &result);
-			CreateShadedCloudMap(sky, cameraPos, cameraSize, &result);
+			CaptureAtmosphereAmbience(sky, cameraPos, cameraSize, result);
+			CaptureLights(sky, cameraPos, cameraSize, result);
+			CreateShadedCloudMap(sky, cameraPos, cameraSize, result);
+
+			return result;
 		}
 
 		void CompositeCamera::CaptureLights(sky::Sky* sky, std::pair<double, double> cameraPos,
@@ -115,8 +117,8 @@ namespace cs
 		{
 			color_spectrum::ColorSpectrumDB* colorSpectrumDB = color_spectrum::ColorSpectrumDB::GetInstance();
 
-			for (int col = 0; col < lightImage.resolutionPx.first; col++)
-				for (int row = 0; row < lightImage.resolutionPx.second; row++)
+			for (int col = 0; col < (int)lightImage.resolutionPx.first; col++)
+				for (int row = 0; row < (int)lightImage.resolutionPx.second; row++)
 				{
 					std::pair<double, double> pos = std::pair<double, double>(
 						(col + 1.0) / lightImage.resolutionPx.first * cameraSize.first + cameraPos.first,
@@ -161,11 +163,13 @@ namespace cs
 				new composite::ImageLayer<composite::RawImage>
 				("Ambience", composite::BlendingMode::CS_NORMAL);
 			
-			composite::RawImage* ambienceImage;
-			CapturePureAtmosphereAmbience(sky, ambienceImage);
+			composite::RawImage* ambienceImage = CapturePureAtmosphereAmbience(sky);
 
-			ambience->SetImage(ambienceImage);
-			folder->layers->push_back((composite::Layer<composite::RawImage>*)(ambience));
+			if (ambienceImage != nullptr)
+			{
+				ambience->SetImage(ambienceImage);
+				folder->layers->push_back((composite::Layer<composite::RawImage>*)(ambience));
+			}
 
 			/*
 			//Blue Filter
@@ -183,14 +187,16 @@ namespace cs
 			image->PushLayer((composite::Layer<composite::RawImage>*)(folder));
 		}
 
-		void CompositeCamera::CapturePureAtmosphereAmbience(sky::Sky* sky, composite::RawImage* ambienceImage)
+		composite::RawImage* CompositeCamera::CapturePureAtmosphereAmbience(sky::Sky* sky)
 		{
-			ambienceImage = new composite::RawImage(targetSpectrum, limitDynamicRange, dynamicRange, resolutionPx);
+			composite::RawImage* ambienceImage = new composite::RawImage(targetSpectrum, limitDynamicRange, dynamicRange, resolutionPx);
 
 			std::vector<double> amColor = CalculateNormalizedAmbientColor(sky);
 
 			for (auto pixel = ambienceImage->image.begin(); pixel != ambienceImage->image.end(); pixel++)
 				*pixel = amColor;
+
+			return ambienceImage;
 		}
 
 		std::vector<double> CompositeCamera::CalculateAtmosphereAmbientColor(sky::Sky* sky)
@@ -275,8 +281,8 @@ namespace cs
 			std::pair<double, double> cameraPos, std::pair<double, double> cameraSize)
 		{
 			cloudMap = new std::vector<double>(resolutionPx.first * resolutionPx.second, 0);
-			for (int col = 0; col < resolutionPx.first; col++)
-				for (int row = 0; row < resolutionPx.second; row++)
+			for (int col = 0; col < (int)resolutionPx.first; col++)
+				for (int row = 0; row < (int)resolutionPx.second; row++)
 				{
 					//Convert to units
 					double x = (col / (resolutionPx.first - 1.0) * cameraSize.first + cameraPos.first) / clouds->scale;
@@ -296,7 +302,7 @@ namespace cs
 						z = 1;
 					//Write to cloud
 
-					cloudMap[row * resolutionPx.first + col];
+					(*cloudMap)[row * resolutionPx.first + col] = z;
 				}
 		}
 
@@ -305,8 +311,8 @@ namespace cs
 		{
 			std::vector<double> ambientColor = CalculateCloudAmbientColor(sky);
 
-			for (int col = 0; col < resolutionPx.first; col++)
-				for (int row = 0; row < resolutionPx.second; row++)
+			for (int col = 0; col < (int)resolutionPx.first; col++)
+				for (int row = 0; row < (int)resolutionPx.second; row++)
 					plainCloudImage->image[row * resolutionPx.second + col] = ambientColor;
 
 			plainCloudImage->alpha = *cloudThicknessMap;
@@ -326,8 +332,8 @@ namespace cs
 			composite::RawImage* cloudhighlightsImage, std::vector<double>* cloudThicknessMap,
 			std::pair<double, double> cameraPos, std::pair<double, double> cameraSize)
 		{
-			for (int col = 0; col < resolutionPx.first; col++)
-				for (int row = 0; row < resolutionPx.second; row++)
+			for (int col = 0; col < (int)resolutionPx.first; col++)
+				for (int row = 0; row < (int)resolutionPx.second; row++)
 					cloudhighlightsImage->image[row * resolutionPx.second + col] = 
 						CalculateCloudHighlightColor(
 							sky, cameraPos, cameraSize, col, row, cloudThicknessMap);
@@ -394,16 +400,16 @@ namespace cs
 				currentPointPosUnits.first + curPointToLightSourceVecUnits.first * 2,
 				currentPointPosUnits.second + curPointToLightSourceVecUnits.second * 2);
 
-			std::pair<double, double> newPos = std::pair<double, double>(
+			std::pair<int, int> newPos = std::pair<int, int>(
 				(int)std::round((newPosUnits.first - cameraPos.first) /
 					cameraSize.first * (resolutionPx.first - 1.0)),
 				(int)std::round((newPosUnits.second - cameraPos.second) /
 					cameraSize.second * (resolutionPx.second - 1.0)));
 
 			if (newPos.first < 0) newPos.first = 0;
-			if (newPos.first >= resolutionPx.first) newPos.first = resolutionPx.first - 1;
+			if (newPos.first >= (int)resolutionPx.first) newPos.first = resolutionPx.first - 1;
 			if (newPos.second < 0) newPos.second = 0;
-			if (newPos.second >= resolutionPx.second) newPos.second = resolutionPx.second - 1;
+			if (newPos.second >= (int)resolutionPx.second) newPos.second = resolutionPx.second - 1;
 
 			double difference = (*cloudThicknessMap)[newPos.second * resolutionPx.second + newPos.first] -
 				(*cloudThicknessMap)[row, col];

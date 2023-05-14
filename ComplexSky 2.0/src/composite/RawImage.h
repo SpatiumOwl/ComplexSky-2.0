@@ -9,8 +9,8 @@ namespace cs
 	{
 		struct RawImage
 		{
-			color_spectrum::ColorSpectrum* colorSpectrum;
-			bool limitedDynamicRange;
+			color_spectrum::ColorSpectrum* colorSpectrum = nullptr;
+			bool limitedDynamicRange = false;
 			std::pair<double, double> dynamicRange;
 			std::pair<unsigned int, unsigned int> resolutionPx;
 			std::vector<std::vector<double>> image;
@@ -29,6 +29,7 @@ namespace cs
 				image = std::vector<std::vector<double>>(resolutionPx.first * resolutionPx.second, 
 					std::vector<double>(colorSpectrum->colorChannels.size(), 0));
 			}
+			inline RawImage() {}
 		};
 	}
 }

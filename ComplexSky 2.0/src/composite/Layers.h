@@ -19,7 +19,8 @@ namespace cs
 		protected:
 			bool isFolder = 0;
 
-			inline Layer(std::string name, BlendingMode blendingMode) : name(name), blendingMode(blendingMode) {}
+			inline Layer(std::string name, BlendingMode blendingMode, bool isFolder) : 
+				name(name), blendingMode(blendingMode), isFolder(isFolder) {}
 			inline Layer() {}
 		public:
 			std::string name;
@@ -38,12 +39,12 @@ namespace cs
 		public:
 			std::pair<int, int> offset;
 
-			inline ImageLayer() { isFolder = 0; }
-			inline ImageLayer(std::string name, BlendingMode blendingMode) : Layer(name, blendingMode) { isFolder = 0; }
+			inline ImageLayer() : Layer<T>("", BlendingMode::CS_NORMAL, false) {}
+			inline ImageLayer(std::string name, BlendingMode blendingMode) : Layer<T>(name, blendingMode, false) {}
 			inline ~ImageLayer() {}
 
 			inline T* GetImage() { return &image; }
-			inline void SetImage(T* image) { image = *image; isEmpty = 0; }
+			inline void SetImage(T* _image) { image = *_image; isEmpty = 0; }
 			inline bool IsEmpty() { return isEmpty; }
 		};
 		template<typename T>
@@ -52,8 +53,10 @@ namespace cs
 		public:
 			std::list<Layer<T>*>* layers;
 
-			inline FolderLayer() : layers(new std::list<Layer<T>*>()) { isFolder = 1; }
-			inline FolderLayer(std::string name, BlendingMode blendingMode) : Layer(name, blendingMode), layers(new std::list<Layer<T>*>()) { isFolder = 1; }
+			inline FolderLayer() : Layer<T>("", BlendingMode::CS_NORMAL, true), 
+				layers(new std::list<Layer<T>*>()) {}
+			inline FolderLayer(std::string name, BlendingMode blendingMode) : Layer<T>(name, blendingMode, true), 
+				layers(new std::list<Layer<T>*>()) {}
 			inline ~FolderLayer()
 			{
 				for (auto layer = layers->begin(); layer != layers->end(); layer++)

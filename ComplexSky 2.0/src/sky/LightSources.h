@@ -20,9 +20,9 @@ namespace cs
 		};
 		struct ColoredLightSource : public LightSource
 		{
-			color_spectrum::ColorSpectrum* colorSpectrum;
+			color_spectrum::ColorSpectrum* colorSpectrum = nullptr;
 			std::vector<double> normalizedColor;
-			double intensity;
+			double intensity = 0;
 		};
 		struct PointLightSource : public ColoredLightSource
 		{
