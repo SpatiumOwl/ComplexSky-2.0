@@ -12,7 +12,7 @@ namespace cs
 		private:
 			std::pair<unsigned int, unsigned int> resolutionPx;
 		public:
-			FolderLayer<RawImage> mainFolder;
+			FolderLayer<RawImage>* mainFolder;
 			color_spectrum::ColorSpectrum* colorSpectrum;
 			bool limitedDynamicRange;
 			std::pair<double, double> dynamicRange;
@@ -20,7 +20,7 @@ namespace cs
 			RawCompositeImage();
 			inline void PushLayer(Layer<RawImage>* layer)
 			{
-				mainFolder.layers->push_back(layer);
+				mainFolder->layers->push_back(layer);
 			}
 			inline void SetPixelSize(std::pair<unsigned int, unsigned int> size)
 			{

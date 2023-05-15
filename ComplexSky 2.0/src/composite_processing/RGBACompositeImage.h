@@ -13,13 +13,13 @@ namespace cs
 		private:
 			std::pair<unsigned int, unsigned int> resolutionPx;
 		public:
-			composite::FolderLayer<cv::Mat4d> mainFolder;
+			composite::FolderLayer<cv::Mat4d>* mainFolder;
 			
 			RGBACompositeImage();
 
 			inline void PushLayer(composite::Layer<cv::Mat4d>* layer)
 			{
-				mainFolder.layers->push_back(layer);
+				mainFolder->layers->push_back(layer);
 			}
 
 			inline void SetPixelSize(unsigned int width, unsigned int height)

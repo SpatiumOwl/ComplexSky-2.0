@@ -30,7 +30,7 @@ namespace cs
 
 			result.SetImage(&image);
 
-			ComposeLayer(&result, (composite::Layer<cv::Mat4d>*)&(compositeImage->mainFolder));
+			ComposeLayer(&result, compositeImage->mainFolder);
 			*destination = *result.GetImage();
 		}
 

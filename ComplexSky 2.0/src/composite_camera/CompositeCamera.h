@@ -47,9 +47,9 @@ namespace cs
 			void CreateShadedCloudMap(sky::Sky* sky, std::pair<double, double> cameraPos,
 				std::pair<double, double> cameraSize, composite::RawCompositeImage* image);
 			
-			void CreateCloudThicknessMap(
-				sky::Clouds* clouds, std::vector<double>* cloudMap,
-				std::pair<double, double> cameraPos, std::pair<double, double> cameraSize);
+			std::vector<double>* CreateCloudThicknessMap(
+				sky::Clouds* clouds, std::pair<double, double> cameraPos,
+				std::pair<double, double> cameraSize);
 
 			void CreatePlainCloudImage(sky::Sky* sky,
 				composite::RawImage* plainCloudImage, std::vector<double>* cloudThicknessMap);

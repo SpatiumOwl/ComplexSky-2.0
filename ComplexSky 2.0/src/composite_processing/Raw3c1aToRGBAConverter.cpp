@@ -10,7 +10,7 @@ namespace cs
 			RGBACompositeImage* rgbaImage = new RGBACompositeImage();
 			rgbaImage->SetPixelSize(rawCompositeImage->GetPixelSize());
 
-			ConvertLayer(&(rawCompositeImage->mainFolder), &(rgbaImage->mainFolder));
+			ConvertLayer(rawCompositeImage->mainFolder, rgbaImage->mainFolder);
 
 			return rgbaImage;
 		}
@@ -34,8 +34,7 @@ namespace cs
 			composite::FolderLayer<composite::RawImage>* from,
 			composite::FolderLayer<cv::Mat4d>* to)
 		{
-			for (std::list<composite::Layer<composite::RawImage>*>::iterator sourceLayer
-				= from->layers->begin();
+			for (auto sourceLayer = from->layers->begin();
 				sourceLayer != from->layers->end(); sourceLayer++)
 			{
 				composite::Layer<cv::Mat4d>* newLayer;

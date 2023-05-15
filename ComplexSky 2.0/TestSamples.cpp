@@ -11,22 +11,7 @@
 using namespace cs;
 int main()
 {
-    /*std::vector<std::vector<double>> matrix1(
-        {
-            {1, 2},
-            {4, 1},
-            {3, 4}
-        });
-    std::vector<std::vector<double>> matrix2(
-        {
-            {1, 2, 3},
-            {4, 1, 2.5}
-        });
-    std::vector<std::vector<double>> result = cs::math_tools::MatrixOperations::MultiplyMatrices(&matrix1, &matrix2);
-
-    int a = 5;*/
-
-    color_spectrum::ColorSpectrumDB* db = 
+    color_spectrum::ColorSpectrumDB* db =
         color_spectrum::ColorSpectrumDB::GetInstance();
 
     color_spectrum::ColorSpectrum rgb;
@@ -120,20 +105,20 @@ int main()
     sky.clouds.SetCloudDensity(1);
     sky.atmosphere.SetLightFilterIntensity(0.3);
 
-    sky::PointLightSource redStar;
-    redStar.colorSpectrum = db->GetSpectrum("RGB");
-    redStar.intensity = 1.5;
-    redStar.pos = std::pair<double, double>(5, 5);
-    redStar.normalizedColor = std::vector<double>{ 1, .3, .1 };
+    sky::PointLightSource* redStar = new sky::PointLightSource();
+    redStar->colorSpectrum = db->GetSpectrum("RGB");
+    redStar->intensity = 1.5;
+    redStar->pos = std::pair<double, double>(5, 5);
+    redStar->normalizedColor = std::vector<double>{ 1, .3, .1 };
 
     sky.lightSources.push_back(redStar);
 
-    sky::PointLightSource blueStar;
-    blueStar.colorSpectrum = db->GetSpectrum("RGB");
-    blueStar.intensity = 1.0;
-    blueStar.pos = std::pair<double, double>(-6, -5);
+    sky::PointLightSource* blueStar = new sky::PointLightSource();
+    blueStar->colorSpectrum = db->GetSpectrum("RGB");
+    blueStar->intensity = 1.0;
+    blueStar->pos = std::pair<double, double>(-6, -5);
 
-    blueStar.normalizedColor = std::vector<double>{ .3, .5, 1 };
+    blueStar->normalizedColor = std::vector<double>{ .3, .5, 1 };
 
     sky.lightSources.push_back(blueStar);
 
@@ -153,7 +138,7 @@ int main()
     exporters::RGBAComposer::ExportImage(rgbaImage,
         "D:\\Education\\Bachelor Diploma\\Test Results\\0_rgb.png");
 
-    camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
+    /*camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
 
     composite::RawCompositeImage* rawRgbHighShutterImage =
         camera.Capture(&sky, std::pair<double, double>(-6, -6),
@@ -178,7 +163,7 @@ int main()
             rawRgbImage);
 
     exporters::RGBAComposer::ExportImage(hubbleImage,
-        "D:\\Education\\Bachelor Diploma\\Test Results\\0_hubble.png");
+        "D:\\Education\\Bachelor Diploma\\Test Results\\0_hubble.png");*/
 
     return 0;
 }

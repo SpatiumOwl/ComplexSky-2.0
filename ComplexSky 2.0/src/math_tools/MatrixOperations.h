@@ -13,14 +13,12 @@ namespace cs
 				const std::vector<std::vector<double>>* matrix2);
 			static std::vector<std::vector<double>> TransposeMatrix(
 				const std::vector<std::vector<double>>* matrix);
+			static std::vector<std::vector<double>> GetOnesMatrix(int n);
 		private:
 			static void CheckIfCanBeMultiplied(
 				const std::vector<std::vector<double>>* matrix1,
 				const std::vector<std::vector<double>>* matrix2);
 			static bool MatrixIsEmpty(const std::vector<std::vector<double>>* matrix);
-			static void InitializeMatrix(
-				std::vector<std::vector<double>>* matrix,
-				std::pair<int, int> size);
 		};
 	}
 }

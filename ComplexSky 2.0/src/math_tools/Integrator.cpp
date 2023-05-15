@@ -65,6 +65,7 @@ namespace cs
 			{
 				prepFunc1 = *(&func1);
 				prepFunc2 = *(&func2);
+				distance = distance1;
 			}
 
 			return std::pair<double, std::pair<std::vector<double>, std::vector<double>>>

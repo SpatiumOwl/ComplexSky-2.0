@@ -12,7 +12,7 @@ namespace cs
 		{
 			Clouds clouds;
 			Atmosphere atmosphere;
-			std::vector<LightSource> lightSources;
+			std::vector<LightSource*> lightSources;
 		};
 	}
 }

@@ -57,9 +57,9 @@ namespace cs
 				lightSource != sky->lightSources.end(); lightSource++)
 			{
 				lightCounter++;
-				if (lightSource->type == sky::LightSourceType::CS_POINT)
+				if ((*lightSource)->type == sky::LightSourceType::CS_POINT)
 					CapturePointLight(sky, cameraPos, cameraSize, image,
-						static_cast<sky::PointLightSource*>(&(*lightSource)), lightCounter);
+						static_cast<sky::PointLightSource*>(&(**lightSource)), lightCounter);
 			}
 		}
 
@@ -184,7 +184,8 @@ namespace cs
 			folder->layers->push_back((Layer*)(filter));
 			*/
 
-			image->PushLayer((composite::Layer<composite::RawImage>*)(folder));
+			//image->PushLayer((composite::Layer<composite::RawImage>*)(folder));
+			image->mainFolder->layers->push_back((composite::Layer<composite::RawImage>*)(folder));
 		}
 
 		composite::RawImage* CompositeCamera::CapturePureAtmosphereAmbience(sky::Sky* sky)
@@ -211,7 +212,7 @@ namespace cs
 		
 		std::vector<double> CompositeCamera::CalculateNormalizedAmbientColor(sky::Sky* sky)
 		{
-			std::vector<double> amColor = std::vector<double>(targetSpectrum->colorChannels.size());
+			std::vector<double> amColor = std::vector<double>(targetSpectrum->colorChannels.size(), 0);
 
 			double totalIntensity = 0;
 
@@ -220,9 +221,9 @@ namespace cs
 			for (auto lightSource = sky->lightSources.begin();
 				lightSource != sky->lightSources.end(); lightSource++)
 			{
-				if (lightSource->type == sky::LightSourceType::CS_POINT)
+				if ((*lightSource)->type == sky::LightSourceType::CS_POINT)
 				{
-					sky::PointLightSource* pointLightSource = static_cast<sky::PointLightSource*>(&(*lightSource));
+					sky::PointLightSource* pointLightSource = static_cast<sky::PointLightSource*>(&(**lightSource));
 					
 					color_spectrum::ColorSpectrumConverter* converter = colorSpectrumDB->GetConverter
 					(pointLightSource->colorSpectrum->name, targetSpectrum->name);
@@ -244,13 +245,13 @@ namespace cs
 			sky::Sky* sky, std::pair<double, double> cameraPos,
 			std::pair<double, double> cameraSize, composite::RawCompositeImage* image)
 		{
-			std::vector<double> cloudThicknessMap;
-			CreateCloudThicknessMap(&(sky->clouds), &cloudThicknessMap, cameraPos, cameraSize);
+			std::vector<double>* cloudThicknessMap =
+				CreateCloudThicknessMap(&(sky->clouds), cameraPos, cameraSize);
 
 			composite::RawImage plainCloudImage = composite::RawImage(
 				targetSpectrum, limitDynamicRange, dynamicRange, resolutionPx);
 
-			CreatePlainCloudImage(sky, &plainCloudImage, &cloudThicknessMap);
+			CreatePlainCloudImage(sky, &plainCloudImage, cloudThicknessMap);
 
 			composite::RawImage highlightsImage = composite::RawImage(
 				targetSpectrum, limitDynamicRange, dynamicRange, resolutionPx);
@@ -276,11 +277,11 @@ namespace cs
 			image->PushLayer(folder);
 		}
 
-		void CompositeCamera::CreateCloudThicknessMap(
-			sky::Clouds* clouds, std::vector<double>* cloudMap,
-			std::pair<double, double> cameraPos, std::pair<double, double> cameraSize)
+		std::vector<double>* CompositeCamera::CreateCloudThicknessMap(
+			sky::Clouds* clouds, std::pair<double, double> cameraPos, 
+			std::pair<double, double> cameraSize)
 		{
-			cloudMap = new std::vector<double>(resolutionPx.first * resolutionPx.second, 0);
+			std::vector<double>* cloudMap = new std::vector<double>(resolutionPx.first * resolutionPx.second, 0);
 			for (int col = 0; col < (int)resolutionPx.first; col++)
 				for (int row = 0; row < (int)resolutionPx.second; row++)
 				{
@@ -304,6 +305,7 @@ namespace cs
 
 					(*cloudMap)[row * resolutionPx.first + col] = z;
 				}
+			return cloudMap;
 		}
 
 		void CompositeCamera::CreatePlainCloudImage(sky::Sky* sky, 
@@ -348,8 +350,8 @@ namespace cs
 			std::vector<double> highlightColor = std::vector<double>(targetSpectrum->colorChannels.size(), 0);
 
 			for (auto lightSource = sky->lightSources.begin(); lightSource != sky->lightSources.end(); lightSource++)
-				if (lightSource->type == sky::LightSourceType::CS_POINT)
-					AddCloudHighlightFromPointLight(sky, static_cast<sky::PointLightSource*>(&(*lightSource)),
+				if ((*lightSource)->type == sky::LightSourceType::CS_POINT)
+					AddCloudHighlightFromPointLight(sky, static_cast<sky::PointLightSource*>(&(**lightSource)),
 						cameraPos, cameraSize, col, row, cloudThicknessMap, &highlightColor);
 
 			return highlightColor;

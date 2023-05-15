@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace cs
 {
@@ -51,12 +52,12 @@ namespace cs
 		class FolderLayer : public Layer<T>
 		{
 		public:
-			std::list<Layer<T>*>* layers;
+			std::vector<Layer<T>*>* layers;
 
 			inline FolderLayer() : Layer<T>("", BlendingMode::CS_NORMAL, true), 
-				layers(new std::list<Layer<T>*>()) {}
+				layers(new std::vector<Layer<T>*>()) {}
 			inline FolderLayer(std::string name, BlendingMode blendingMode) : Layer<T>(name, blendingMode, true), 
-				layers(new std::list<Layer<T>*>()) {}
+				layers(new std::vector<Layer<T>*>()) {}
 			inline ~FolderLayer()
 			{
 				for (auto layer = layers->begin(); layer != layers->end(); layer++)

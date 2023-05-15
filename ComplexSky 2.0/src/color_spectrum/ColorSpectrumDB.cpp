@@ -14,7 +14,7 @@ namespace cs
 
 		void ColorSpectrumDB::AddSpectrum(ColorSpectrum* colorSpectrum)
 		{
-			if (SpectrumPresent(colorSpectrum->name))
+			if (!SpectrumPresent(colorSpectrum->name))
 				spectrums[colorSpectrum->name] = colorSpectrum;
 		}
 		ColorSpectrum* ColorSpectrumDB::GetSpectrum(string name)
