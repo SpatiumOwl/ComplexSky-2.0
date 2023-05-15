@@ -12,7 +12,7 @@ namespace cs
 			static RGBACompositeImage* ConvertRaw3c1aToRGBA
 			(composite::RawCompositeImage* rawCompositeImage);
 		
-			static cv::Mat4d ConvertRaw3c1aToRGBA
+			static cv::Mat4d* ConvertRaw3c1aToRGBA
 			(composite::RawImage* rawImage);
 
 		private:

@@ -23,6 +23,7 @@ namespace cs
 			{
 				colorSpectrum = _colorSpectrum;
 				limitedDynamicRange = _limitedDynamicRange;
+				dynamicRange = _dynamicRange;
 				resolutionPx = _resolutionPx;
 
 				alpha = std::vector<double>(resolutionPx.first * resolutionPx.second, 1);

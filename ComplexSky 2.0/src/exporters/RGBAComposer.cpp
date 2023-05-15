@@ -8,30 +8,40 @@ namespace cs
 			composite_processing::RGBACompositeImage* compositeImage,
 			std::string path)
 		{
-			cv::Mat4d result;
-			ComposeImage(compositeImage, &result);
+			cv::Mat4d* result = ComposeImage(compositeImage);
 
-			cv::imwrite(path, result);
+			cv::Mat result_8u4c;
+			cv::normalize(*result, result_8u4c, 0, 255, cv::NORM_MINMAX, CV_8UC4);
+
+			cv::imshow("Win", result_8u4c);
+			cv::waitKey(0);
+
+			cv::imwrite(path, result_8u4c);
 		}
 
-		void RGBAComposer::ComposeImage(
-			composite_processing::RGBACompositeImage* compositeImage, cv::Mat4d* destination)
+		cv::Mat4d* RGBAComposer::ComposeImage(
+			composite_processing::RGBACompositeImage* compositeImage)
 		{
-			composite::ImageLayer<cv::Mat4d> result;
-			result.blendingMode = composite::BlendingMode::CS_NORMAL;
-			result.name = "Result";
-			result.offset = std::pair<int, int>(0, 0);
+			composite::ImageLayer<cv::Mat4d>* result = new composite::ImageLayer<cv::Mat4d>();
+			result->blendingMode = composite::BlendingMode::CS_NORMAL;
+			result->name = "Result";
+			result->offset = std::pair<int, int>(0, 0);
 
-			cv::Mat4d image = cv::Mat::zeros(compositeImage->GetPixelSize().second, 
+			cv::Mat4d* image = new cv::Mat4d(compositeImage->GetPixelSize().second,
 				compositeImage->GetPixelSize().first, CV_32FC4);
 
-			for (auto pixel = image.begin(); pixel != image.end(); pixel++)
+			for (auto pixel = image->begin(); pixel != image->end(); pixel++)
 				*pixel = cv::Vec4d(0, 0, 0, 1);
 
-			result.SetImage(&image);
+			result->SetImage(image);
 
-			ComposeLayer(&result, compositeImage->mainFolder);
-			*destination = *result.GetImage();
+			ComposeLayer(result, compositeImage->mainFolder);
+
+			cv::Vec4d a = result->GetImage()->at<cv::Vec4d>(0, 0);
+			cv::Vec4d b = result->GetImage()->at<cv::Vec4d>(300, 300);
+			cv::Vec4d c = result->GetImage()->at<cv::Vec4d>(500, 500);
+
+			return result->GetImage();
 		}
 
 		void RGBAComposer::ComposeLayer(composite::ImageLayer<cv::Mat4d>* destination, 
@@ -52,6 +62,9 @@ namespace cs
 
 				BlendLayer(&image, destination);
 			}
+			cv::Vec4d a = destination->GetImage()->at<cv::Vec4d>(0, 0);
+			cv::Vec4d b = destination->GetImage()->at<cv::Vec4d>(300, 300);
+			cv::Vec4d c = destination->GetImage()->at<cv::Vec4d>(500, 500);
 		}
 
 		void RGBAComposer::BlendLayer(
@@ -62,13 +75,13 @@ namespace cs
 
 			cv::Vec2i size = CalculateNewImageSize(source, destination, localOffset);
 
-			cv::Mat4d result = cv::Mat::zeros(size[1], size[0], CV_32FC4);
+			cv::Mat4d* result = new cv::Mat4d(size[1], size[0], CV_32FC4);
 
-			for (int i = 0; i < result.rows; i++)
-				for (int j = 0; j < result.cols; j++)
-					result.at<cv::Vec4d>(j, i) = BlendPixels(source, destination, i, j, localOffset);
+			for (int i = 0; i < result->rows; i++)
+				for (int j = 0; j < result->cols; j++)
+					result->at<cv::Vec4d>(j, i) = BlendPixels(source, destination, i, j, localOffset);
 
-			destination->SetImage(&result);
+			destination->SetImage(result);
 			destination->offset = localOffset;
 		}
 		
