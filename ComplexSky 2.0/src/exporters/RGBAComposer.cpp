@@ -10,13 +10,13 @@ namespace cs
 		{
 			cv::Mat4d* result = ComposeImage(compositeImage);
 
-			cv::Mat result_8u4c;
-			cv::normalize(*result, result_8u4c, 0, 255, cv::NORM_MINMAX, CV_8UC4);
+			cv::Mat result_scaled = (*result * 255);
 
-			cv::imshow("Win", result_8u4c);
-			cv::waitKey(0);
+			cv::Mat result_8u4c;
+			result_scaled.convertTo(result_8u4c, CV_8UC4, 1.0);
 
 			cv::imwrite(path, result_8u4c);
+
 		}
 
 		cv::Mat4d* RGBAComposer::ComposeImage(
@@ -31,15 +31,11 @@ namespace cs
 				compositeImage->GetPixelSize().first, CV_32FC4);
 
 			for (auto pixel = image->begin(); pixel != image->end(); pixel++)
-				*pixel = cv::Vec4d(0, 0, 0, 1);
+				*pixel = cv::Vec4d(0, 0, 0, 0);
 
 			result->SetImage(image);
 
 			ComposeLayer(result, compositeImage->mainFolder);
-
-			cv::Vec4d a = result->GetImage()->at<cv::Vec4d>(0, 0);
-			cv::Vec4d b = result->GetImage()->at<cv::Vec4d>(300, 300);
-			cv::Vec4d c = result->GetImage()->at<cv::Vec4d>(500, 500);
 
 			return result->GetImage();
 		}
@@ -62,9 +58,6 @@ namespace cs
 
 				BlendLayer(&image, destination);
 			}
-			cv::Vec4d a = destination->GetImage()->at<cv::Vec4d>(0, 0);
-			cv::Vec4d b = destination->GetImage()->at<cv::Vec4d>(300, 300);
-			cv::Vec4d c = destination->GetImage()->at<cv::Vec4d>(500, 500);
 		}
 
 		void RGBAComposer::BlendLayer(
@@ -169,12 +162,12 @@ namespace cs
 			double As = GetAlpha(sourcePixel);
 
 			cv::Vec3d Cd = GetColor(destinationPixel);
-			double Ab = GetAlpha(destinationPixel);
+			double Ad = GetAlpha(destinationPixel);
 
-			double Ar = Ab + As - Ab * As;
+			double Ar = Ad + As - Ad * As;
 
 			cv::Vec3d B = BlendFunc(Cs, Cd, blendingMode);
-			cv::Vec3d Cr = (1 - As / Ar) * Cd + As / Ar * ((1 - Ab) * Cs + Ab * B);
+			cv::Vec3d Cr = (1 - As / Ar) * Cd + As / Ar * ((1 - Ad) * Cs + Ad * B);
 
 			return cv::Vec4d(Cr[0], Cr[1], Cr[2], Ar);
 		}

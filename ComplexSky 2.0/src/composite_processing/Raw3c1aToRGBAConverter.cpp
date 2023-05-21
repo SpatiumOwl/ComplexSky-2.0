@@ -87,10 +87,16 @@ namespace cs
 						alpha
 					);
 					if (resultPixel[0] < 0) resultPixel[0] = 0;
+					if (resultPixel[0] > 1) resultPixel[0] = 1;
 					if (resultPixel[1] < 0) resultPixel[1] = 0;
+					if (resultPixel[1] > 1) resultPixel[1] = 1;
 					if (resultPixel[2] < 0) resultPixel[2] = 0;
+					if (resultPixel[2] > 1) resultPixel[2] = 1;
 
 					result->at<cv::Vec4d>(j, i) = resultPixel;
+
+					if (i == 300 && j == 300)
+						int a = 5;
 				}
 
 			cv::Vec4d a = result->at<cv::Vec4d>(0, 0);

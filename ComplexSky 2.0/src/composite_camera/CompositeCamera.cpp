@@ -256,6 +256,8 @@ namespace cs
 			composite::RawImage highlightsImage = composite::RawImage(
 				targetSpectrum, limitDynamicRange, dynamicRange, resolutionPx);
 
+			CreateCloudHighlightsImage(sky, &highlightsImage, cloudThicknessMap,
+				cameraPos, cameraSize);
 
 			composite::FolderLayer<composite::RawImage>* folder = 
 				new composite::FolderLayer<composite::RawImage>
@@ -340,7 +342,7 @@ namespace cs
 						CalculateCloudHighlightColor(
 							sky, cameraPos, cameraSize, col, row, cloudThicknessMap);
 
-			//May include alpha channel for highlights
+			cloudhighlightsImage->alpha = *cloudThicknessMap;
 		}
 
 		std::vector<double> CompositeCamera::CalculateCloudHighlightColor(sky::Sky* sky,
