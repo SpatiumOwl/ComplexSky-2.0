@@ -127,7 +127,7 @@ int main()
         db->GetSpectrum("RGB"), std::pair<unsigned int, unsigned int>(600, 600),
             std::pair<double, double>(0, 1));
 
-    composite::RawCompositeImage* rawRgbImage = 
+    composite::RawCompositeImage* rawRgbImage =
         camera.Capture(&sky, std::pair<double, double>(-6, -6),
         std::pair<double, double>(12, 12));
 
@@ -138,7 +138,7 @@ int main()
     exporters::RGBAComposer::ExportImage(rgbaImage,
         "D:\\Education\\Bachelor Diploma\\Test Results\\0_rgb.png");
 
-    /*camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
+    camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
 
     composite::RawCompositeImage* rawRgbHighShutterImage =
         camera.Capture(&sky, std::pair<double, double>(-6, -6),
@@ -160,10 +160,10 @@ int main()
 
     composite_processing::RGBACompositeImage* hubbleImage =
         composite_processing::Raw3c1aToRGBAConverter::ConvertRaw3c1aToRGBA(
-            rawRgbImage);
+            rawHubbleImage);
 
     exporters::RGBAComposer::ExportImage(hubbleImage,
-        "D:\\Education\\Bachelor Diploma\\Test Results\\0_hubble.png");*/
+        "D:\\Education\\Bachelor Diploma\\Test Results\\0_hubble.png");
 
     return 0;
 }

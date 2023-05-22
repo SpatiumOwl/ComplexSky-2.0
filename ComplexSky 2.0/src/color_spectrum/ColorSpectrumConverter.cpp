@@ -35,6 +35,7 @@ namespace cs
 						else
 							function[i][j] = intersectionArea / targetArea;
 					}
+				int a = 5;
 			}
 		}
 		std::vector<double> ColorSpectrumConverter::ConvertRaw(const std::vector<double>* source)

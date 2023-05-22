@@ -1,60 +1,50 @@
-<mxfile host="Electron" modified="2023-05-14T07:02:06.060Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="57D31QdrxSK9KGajke69" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-22T07:40:35.672Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="N-wa51E9aJFzXaNYFv9F" version="21.1.2" type="device">
   <diagram id="wFE0QG_FPsp0jaGvCLVb" name="Page-1">
-    <mxGraphModel dx="1948" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2284" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="_5mSTuPxr-ZiKRkBDSY7-1" value="" style="swimlane;fontStyle=2;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;swimlaneFillColor=none;fontFamily=Permanent Marker;fontSize=16;points=[];verticalAlign=top;stackBorder=0;resizable=1;strokeWidth=2;sketch=1;disableMultiStroke=1;" parent="1" vertex="1">
-          <mxGeometry y="80" width="900" height="1390" as="geometry" />
+          <mxGeometry y="80" width="900" height="1680" as="geometry" />
         </mxCell>
         <object label="TO DO" status="New" id="_5mSTuPxr-ZiKRkBDSY7-2">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=none;fillStyle=solid;fillColor=#A0522D;" parent="_5mSTuPxr-ZiKRkBDSY7-1" vertex="1">
-            <mxGeometry y="28" width="300" height="1362" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Make the pre-protection presentation" placeholders="1" id="pLNMyA59S91D-jUSyazH-4">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="21" width="260" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Pre-protection" placeholders="1" id="pLNMyA59S91D-jUSyazH-5">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#E0E0E0;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#404040;imageHeight=15;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="81" width="260" height="20" as="geometry" />
+            <mxGeometry y="28" width="300" height="1652" as="geometry" />
           </mxCell>
         </object>
         <object label="Add scaling function" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-13">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="121" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="21" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Write HubbleToRawConverter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-24">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="181" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="81" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Write RGBAToRawConverter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-25">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="241" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="141" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Write PSDExporter method implementations" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-22">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="301" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="201" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Re-add red/blue filters" placeholders="1" id="g0ZLRYcUdAwbYLiDwm-Z-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="361" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="261" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Add textured light sources support into CompositeCamera methods" placeholders="1" id="g0ZLRYcUdAwbYLiDwm-Z-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="421" width="260" height="40" as="geometry" />
+            <mxGeometry x="20" y="321" width="260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="DOING" status="In progress" id="_5mSTuPxr-ZiKRkBDSY7-6">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=none;fillStyle=solid;fillColor=#006600;" parent="_5mSTuPxr-ZiKRkBDSY7-1" vertex="1">
-            <mxGeometry x="300" y="28" width="300" height="1362" as="geometry" />
+            <mxGeometry x="300" y="28" width="300" height="1652" as="geometry" />
           </mxCell>
         </object>
         <object label="Test the program" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-26">
@@ -64,7 +54,7 @@
         </object>
         <object label="DONE" status="Completed" id="_5mSTuPxr-ZiKRkBDSY7-9">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=none;fillStyle=solid;fillColor=#1BA1E2;" parent="_5mSTuPxr-ZiKRkBDSY7-1" vertex="1">
-            <mxGeometry x="600" y="28" width="300" height="1362" as="geometry" />
+            <mxGeometry x="600" y="28" width="300" height="1652" as="geometry" />
           </mxCell>
         </object>
         <object label="Write definitions for CompositeProcessing" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-4">
@@ -175,6 +165,16 @@
         <object label="Program some samples" placeholders="1" id="_B5xB6yS-wQfZPq2VHyh-27">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
             <mxGeometry x="20" y="1281" width="260" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Make the pre-protection presentation" placeholders="1" id="pLNMyA59S91D-jUSyazH-4">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
+            <mxGeometry x="20" y="1341" width="260" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Pre-protection" placeholders="1" id="pLNMyA59S91D-jUSyazH-5">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#E0E0E0;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#404040;imageHeight=15;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
+            <mxGeometry x="20" y="1401" width="260" height="20" as="geometry" />
           </mxCell>
         </object>
       </root>

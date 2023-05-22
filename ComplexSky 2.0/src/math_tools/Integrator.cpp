@@ -49,13 +49,13 @@ namespace cs
 			std::vector<double> prepFunc1, prepFunc2;
 			double distance;
 
-			if (distance1 > distance2)
+			if (distance1 < distance2)
 			{
 				prepFunc1 = *(&func1);
 				prepFunc2 = ConvertToNewDistance(func2, distance2, distance1);
 				distance = distance1;
 			}
-			else if (distance1 < distance2)
+			else if (distance1 > distance2)
 			{
 				prepFunc2 = *(&func2);
 				prepFunc1 = ConvertToNewDistance(func1, distance1, distance2);
