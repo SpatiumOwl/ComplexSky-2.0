@@ -17,10 +17,10 @@ namespace cs
 		struct LightSource
 		{
 			LightSourceType type;
+			color_spectrum::ColorSpectrum* colorSpectrum = nullptr;
 		};
 		struct ColoredLightSource : public LightSource
 		{
-			color_spectrum::ColorSpectrum* colorSpectrum = nullptr;
 			std::vector<double> normalizedColor;
 			double intensity = 0;
 		};
