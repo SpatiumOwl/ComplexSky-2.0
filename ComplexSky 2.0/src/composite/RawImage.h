@@ -30,6 +30,18 @@ namespace cs
 				image = std::vector<std::vector<double>>(resolutionPx.first * resolutionPx.second, 
 					std::vector<double>(colorSpectrum->colorChannels.size(), 0));
 			}
+			inline RawImage(bool _limitedDynamicRange,
+				std::pair<double, double> _dynamicRange,
+				std::pair<unsigned int, unsigned int> _resolutionPx)
+			{
+				limitedDynamicRange = _limitedDynamicRange;
+				dynamicRange = _dynamicRange;
+				resolutionPx = _resolutionPx;
+
+				alpha = std::vector<double>(resolutionPx.first * resolutionPx.second, 1);
+				image = std::vector<std::vector<double>>(resolutionPx.first * resolutionPx.second,
+					std::vector<double>(colorSpectrum->colorChannels.size(), 0));
+			}
 			inline RawImage() {}
 		};
 	}

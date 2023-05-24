@@ -51,6 +51,9 @@
     <ClCompile Include="src\composite_camera\CompositeCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\raw_texture_converters\Converter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\composite\Layers.h">
@@ -117,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\math_tools\Integrator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\raw_texture_converters\Converter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
