@@ -35,7 +35,7 @@ namespace cs
 		};
 		struct TextureLightSource : public LightSource
 		{
-			composite::RawImage texture;
+			composite::RawImage* texture;
 			std::pair<double, double> pos;
 			std::pair<double, double> size;
 			LightSourceType type = LightSourceType::CS_TEXTURE;
