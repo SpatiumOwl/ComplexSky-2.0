@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\exporters\PSDExporter.cpp" />
     <ClCompile Include="src\raw_texture_converters\Converter.cpp" />
     <ClCompile Include="TestSamples.cpp" />
     <ClCompile Include="src\composite\RawCompositeImage.cpp" />

@@ -11,12 +11,6 @@ namespace cs
 		class RGBAComposer
 		{
 		private:
-			static cv::Mat4d* ComposeImage(
-				composite_processing::RGBACompositeImage* compositeImage);
-
-			static void ComposeLayer(composite::ImageLayer<cv::Mat4d>* destination,
-				composite::Layer<cv::Mat4d>* layer);
-
 			static void BlendLayer(
 				composite::ImageLayer<cv::Mat4d>* source,
 				composite::ImageLayer<cv::Mat4d>* destination);
@@ -54,6 +48,12 @@ namespace cs
 			static void ExportImage(
 				composite_processing::RGBACompositeImage* compositeImage,
 				std::string path);
+
+			static cv::Mat4d* ComposeImage(
+				composite_processing::RGBACompositeImage* compositeImage);
+
+			static void ComposeLayer(composite::ImageLayer<cv::Mat4d>* destination,
+				composite::Layer<cv::Mat4d>* layer);
 		};
 	}
 }

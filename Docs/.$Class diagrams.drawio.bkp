@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-24T07:59:25.181Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="iE3sJ8F-2XfZX8FeOTUm" version="21.1.2" type="device" pages="9">
+<mxfile host="Electron" modified="2023-05-24T09:11:43.355Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="vNEhMwXixzlpUeewn_NO" version="21.1.2" type="device" pages="9">
   <diagram id="xBpeeoNmWK5TZJDFUNut" name="MathTools">
     <mxGraphModel dx="1418" dy="838" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -124,7 +124,7 @@
         <mxCell id="SieYb8Y1K3ome5ax8vdq-2" value="RawImage Convert(Mat4d image,&amp;nbsp;pair&amp;lt;double, double&amp;gt; dynamicRange)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="SieYb8Y1K3ome5ax8vdq-1" vertex="1">
           <mxGeometry y="52" width="370" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="RJTRr8c8pBKj7gE7nq_G-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" edge="1" parent="1" source="SieYb8Y1K3ome5ax8vdq-5" target="RJTRr8c8pBKj7gE7nq_G-1">
+        <mxCell id="RJTRr8c8pBKj7gE7nq_G-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;endSize=12;" edge="1" parent="1" source="SieYb8Y1K3ome5ax8vdq-5" target="RJTRr8c8pBKj7gE7nq_G-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="SieYb8Y1K3ome5ax8vdq-5" value="class HubbleToRawConverter" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
@@ -659,7 +659,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="0ja5H0AbbZNoE_hkBHnO" name="Composite">
-    <mxGraphModel dx="472" dy="845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1418" dy="838" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -979,7 +979,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="OYwyBm4eLjjZvyNqHdFD" name="Exporters">
-    <mxGraphModel dx="552" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="712" dy="845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -992,56 +992,77 @@
         <mxCell id="31arN5heSXzyEfA0M75S-17" value="private" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=3;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
           <mxGeometry y="34" width="380" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="31arN5heSXzyEfA0M75S-16" value="static void ComposeImage(RGBACompositeImage* compositeImage,&#xa;    Mat4d* destination)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
-          <mxGeometry y="60" width="380" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="31arN5heSXzyEfA0M75S-18" value="static void ComposeLayer(ImageLayer&lt;Mat4d&gt;* destination, &#xa;    Layer&lt;Mat4d&gt;* layer)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
-          <mxGeometry y="104" width="380" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="31arN5heSXzyEfA0M75S-19" value="static void BlendLayer(ImageLayer&lt;Mat4d&gt;* source, &#xa;    ImageLayer&lt;Mat4d&gt;* destination)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
-          <mxGeometry y="144" width="380" height="40" as="geometry" />
+          <mxGeometry y="60" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-1" value="static pair&lt;int, int&gt; CalculateNewOffset(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="184" width="380" height="46" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-1" value="static pair&lt;int, int&gt; CalculateNewOffset(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="100" width="380" height="46" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-2" value="static Vec2i CalculateNewImageSize(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;    pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="230" width="380" height="60" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-2" value="static Vec2i CalculateNewImageSize(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;    pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="146" width="380" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-3" value="static Vec4d BlendPixels(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;        int row, int col, pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="290" width="380" height="60" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-3" value="static Vec4d BlendPixels(&#xa;    ImageLayer&lt;Mat4d&gt;* source, ImageLayer&lt;Mat4d&gt;* destination,&#xa;        int row, int col, pair&lt;int, int&gt;&amp; localOffset)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="206" width="380" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-4" value="static Vec4d GetPixel(ImageLayer&lt;cv::Mat4d&gt;* image,&#xa;        int row, int col)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="350" width="380" height="40" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-4" value="static Vec4d GetPixel(ImageLayer&lt;cv::Mat4d&gt;* image,&#xa;        int row, int col)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="266" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-5" value="static Vec4d PorterDuffFunc(Vec4d sourcePixel, &#xa;    Vec4d destinationPixel, BlendingMode blendingMode)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="390" width="380" height="40" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-5" value="static Vec4d PorterDuffFunc(Vec4d sourcePixel, &#xa;    Vec4d destinationPixel, BlendingMode blendingMode)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="306" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-6" value="static Vec3d GetColor(Vec4d pixel)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="430" width="380" height="30" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-6" value="static Vec3d GetColor(Vec4d pixel)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="346" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-7" value="static double GetAlpha(Vec4d pixel)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="460" width="380" height="30" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-7" value="static double GetAlpha(Vec4d pixel)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="376" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="v6u0pSrcBfLl22JGxaRc-8" value="static cv::Vec3d BlendFunc( Vec3d colorSource, &#xa;    Vec3d colorDestination, BlendingMode blendingMode)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="31arN5heSXzyEfA0M75S-1">
-          <mxGeometry y="490" width="380" height="40" as="geometry" />
+        <mxCell id="v6u0pSrcBfLl22JGxaRc-8" value="static cv::Vec3d BlendFunc( Vec3d colorSource, &#xa;    Vec3d colorDestination, BlendingMode blendingMode)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="406" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="31arN5heSXzyEfA0M75S-10" value="public" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=3;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
-          <mxGeometry y="530" width="380" height="26" as="geometry" />
+          <mxGeometry y="446" width="380" height="26" as="geometry" />
         </mxCell>
         <mxCell id="yPD-ic7VrN5FYbJn7O7n-1" value="static void ExportImage(RGBACompositeImage* compositeImage, &lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;string path)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
-          <mxGeometry y="556" width="380" height="40" as="geometry" />
+          <mxGeometry y="472" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="31arN5heSXzyEfA0M75S-18" value="static void ComposeLayer(ImageLayer&lt;Mat4d&gt;* destination, &#xa;    Layer&lt;Mat4d&gt;* layer)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="512" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="31arN5heSXzyEfA0M75S-16" value="static void ComposeImage(RGBACompositeImage* compositeImage,&#xa;    Mat4d* destination)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="31arN5heSXzyEfA0M75S-1" vertex="1">
+          <mxGeometry y="552" width="380" height="44" as="geometry" />
         </mxCell>
         <mxCell id="Id2AJXvOFxKm-Z7PnNBy-1" value="static class PSDExporter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
-          <mxGeometry x="400" y="740" width="380" height="106" as="geometry" />
+          <mxGeometry x="400" y="740" width="390" height="456" as="geometry" />
         </mxCell>
         <mxCell id="Id2AJXvOFxKm-Z7PnNBy-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Id2AJXvOFxKm-Z7PnNBy-1" vertex="1">
-          <mxGeometry y="26" width="380" height="8" as="geometry" />
+          <mxGeometry y="26" width="390" height="8" as="geometry" />
         </mxCell>
         <mxCell id="_5y3QG3SzI0XPnqnM74v-1" value="public" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=3;fontFamily=Times New Roman;fontSize=13;" parent="Id2AJXvOFxKm-Z7PnNBy-1" vertex="1">
-          <mxGeometry y="34" width="380" height="26" as="geometry" />
+          <mxGeometry y="34" width="390" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="31arN5heSXzyEfA0M75S-20" value="static int ExportPSD(RGBACompositeImage compositeImage, &#xa;    string path)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="Id2AJXvOFxKm-Z7PnNBy-1" vertex="1">
-          <mxGeometry y="60" width="380" height="46" as="geometry" />
+        <mxCell id="31arN5heSXzyEfA0M75S-20" value="static int ExportPSD(RGBACompositeImage* compositeImage, &#xa;    string path)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" parent="Id2AJXvOFxKm-Z7PnNBy-1" vertex="1">
+          <mxGeometry y="60" width="390" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-1" value="private" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="106" width="390" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-2" value="static void WriteLayerToPSD(ExportDocument* document, &#xa;    MallocAllocator&amp; allocator, vector&lt;Layer&lt;Mat4d&gt;*&gt;::iterator&amp; layer, &#xa;    NativeFile&amp; file)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="132" width="390" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-3" value="static void ObtainImageLayer(vector&lt;Layer&lt;Mat4d&gt;*&gt;::iterator&amp; layer,&#xa;    ImageLayer&lt;Mat4d&gt;&amp; image)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="190" width="390" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-4" value="static void WriteFromImageLayerToExportLayer(&#xa;    ImageLayer&lt;Mat4d&gt;&amp; image, ExportDocument* document, &#xa;    MallocAllocator&amp; allocator, uint exportLayer)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="236" width="390" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-5" value="static vector&lt;uint8_t*&gt; SplitImageIntoChannels(&#xa;    ImageLayer&lt;Mat4d&gt;&amp; image)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="290" width="390" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-6" value="static void UploadColorChannelsToExportLayer(&#xa;    ExportDocument* document, MallocAllocator&amp; allocator, &#xa;    unsigned int exportLayer, ImageLayer&lt;Mat4d&gt;&amp; image, &#xa;    vector&lt;uint8_t*&gt;&amp; colorChannels)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="336" width="390" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="RqRhX2NHqdw2JGqo6Q3k-7" value="static int ExportPSD(RGBACompositeImage* compositeImage, &#xa;    string path)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="Id2AJXvOFxKm-Z7PnNBy-1">
+          <mxGeometry y="410" width="390" height="46" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
