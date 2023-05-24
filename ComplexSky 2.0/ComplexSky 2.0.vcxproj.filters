@@ -128,5 +128,8 @@
     <ClInclude Include="src\raw_texture_converters\Converter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestSamples.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

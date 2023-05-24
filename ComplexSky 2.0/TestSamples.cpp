@@ -7,13 +7,13 @@
 #include "composite_camera/CompositeCamera.h"
 #include "composite_processing/Raw3c1aToRGBAConverter.h"
 #include "exporters/RGBAComposer.h"
+#include "raw_texture_converters/HubbleToRawConverter.h"
+#include "TestSamples.h"
 
 using namespace cs;
-int main()
-{
-    color_spectrum::ColorSpectrumDB* db =
-        color_spectrum::ColorSpectrumDB::GetInstance();
 
+void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
+{
     color_spectrum::ColorSpectrum rgb;
     rgb.name = "RGB";
 
@@ -29,7 +29,7 @@ int main()
         75, 50, 30, 3,
         0 };
     rgb.colorChannels.push_back(red);
-        
+
     color_spectrum::ColorSpectrumChannel green;
     green.distanceBetweenValues = 25;
     green.func = std::vector<double>{
@@ -50,7 +50,7 @@ int main()
         0, 0, 0, 0,
         0, 0, 0, 0,
         0, 30, 85, 95,
-        50, 9, 1, 0};
+        50, 9, 1, 0 };
     rgb.colorChannels.push_back(blue);
 
     db->AddSpectrum(&rgb);
@@ -98,13 +98,18 @@ int main()
     hubble.colorChannels.push_back(o3);
 
     db->AddSpectrum(&hubble);
-        
-    sky::Sky sky;
+}
+
+void InitializeSky0(cs::sky::Sky& sky)
+{
     sky.clouds.scale = 2;
     sky.clouds.SetAmbientBrightness(0.7);
     sky.clouds.SetCloudDensity(1);
     sky.atmosphere.SetLightFilterIntensity(0.3);
+}
 
+void AddPointLights0(cs::color_spectrum::ColorSpectrumDB* db, cs::sky::Sky& sky)
+{
     sky::PointLightSource* redStar = new sky::PointLightSource();
     redStar->colorSpectrum = db->GetSpectrum("RGB");
     redStar->intensity = 1.5;
@@ -121,6 +126,35 @@ int main()
     blueStar->normalizedColor = std::vector<double>{ .3, .5, 1 };
 
     sky.lightSources.push_back(blueStar);
+}
+
+void AddTextureLights0(cs::color_spectrum::ColorSpectrumDB* db, cs::sky::Sky& sky)
+{
+    sky::TextureLightSource* galaxy = new sky::TextureLightSource();
+    galaxy->colorSpectrum = db->GetSpectrum("Hubble");
+    galaxy->texture = rtc::HubbleToRawConverter::ImportTexture(
+        "D:\\Education\\Bachelor Diploma\\ComplexSky 2.0\\ComplexSky 2.0\\res\\Galaxy_0.png",
+        std::pair<double, double>(0, 0.5));
+    galaxy->pos = std::pair<double, double>(-1, -0.5);
+    galaxy->size = std::pair<double, double>(2, 1.3);
+
+    sky.lightSources.push_back(galaxy);
+}
+
+int main()
+{
+    color_spectrum::ColorSpectrumDB* db =
+        color_spectrum::ColorSpectrumDB::GetInstance();
+
+    AddSpectrums(db);
+        
+    sky::Sky sky;
+
+    InitializeSky0(sky);
+
+    AddPointLights0(db, sky);
+
+    AddTextureLights0(db, sky);
 
     composite_camera::CompositeCamera camera =
         composite_camera::CompositeCamera::CreateWithLimitedDynamicRange(
@@ -138,7 +172,7 @@ int main()
     exporters::RGBAComposer::ExportImage(rgbaImage,
         "D:\\Education\\Bachelor Diploma\\Test Results\\0_rgb.png");
 
-    camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
+    /*camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
 
     composite::RawCompositeImage* rawRgbHighShutterImage =
         camera.Capture(&sky, std::pair<double, double>(-6, -6),
@@ -163,9 +197,10 @@ int main()
             rawHubbleImage);
 
     exporters::RGBAComposer::ExportImage(hubbleImage,
-        "D:\\Education\\Bachelor Diploma\\Test Results\\0_hubble.png");
+        "D:\\Education\\Bachelor Diploma\\Test Results\\0_hubble.png");*/
 
     return 0;
 }
+
 
 

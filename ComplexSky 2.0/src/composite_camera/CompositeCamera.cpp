@@ -175,7 +175,7 @@ namespace cs
 			composite::RawImage lightImage = composite::RawImage(image->colorSpectrum,
 				image->limitedDynamicRange, image->dynamicRange, absoluteSize);
 
-			CapturePureTextureLightImage(lightImage, lightSource->texture);
+			CapturePureTextureLightImage(lightImage, *(lightSource->texture));
 
 			composite::ImageLayer<composite::RawImage>* lightLayer =
 				new composite::ImageLayer<composite::RawImage>

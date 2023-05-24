@@ -202,6 +202,7 @@
     <ClInclude Include="src\color_spectrum\ColorSpectrum.h" />
     <ClInclude Include="src\color_spectrum\ColorSpectrumConverter.h" />
     <ClInclude Include="src\color_spectrum\ColorSpectrumDB.h" />
+    <ClInclude Include="TestSamples.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
