@@ -19,9 +19,9 @@ namespace cs
 
 					//Input pixel is in BGR, need to convert it to RGB
 					image->image[row * rgb8Image.cols + col] = std::vector<double>{
-						(double)inputPixel[2] / 255.0,
-						(double)inputPixel[1] / 255.0,
-						(double)inputPixel[0] / 255.0
+						(double)inputPixel[2] / 255.0 * dynamicRange.second,
+						(double)inputPixel[1] / 255.0 * dynamicRange.second,
+						(double)inputPixel[0] / 255.0 * dynamicRange.second
 					};
 				}
 
