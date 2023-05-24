@@ -1,5 +1,6 @@
 #include "CompositeCamera.h"
 #include "math_tools/PerlinNoiseGenerator.h"
+#include "math_tools/Interpolator.h"
 #include "color_spectrum/ColorSpectrumDB.h"
 #include <iostream>
 
@@ -60,6 +61,9 @@ namespace cs
 				if ((*lightSource)->type == sky::LightSourceType::CS_POINT)
 					CapturePointLight(sky, cameraPos, cameraSize, image,
 						static_cast<sky::PointLightSource*>(&(**lightSource)), lightCounter);
+				else if ((*lightSource)->type == sky::LightSourceType::CS_TEXTURE)
+					CaptureTextureLight(sky, cameraPos, cameraSize, image,
+						static_cast<sky::TextureLightSource*>(&(**lightSource)), lightCounter);
 			}
 		}
 
@@ -67,7 +71,7 @@ namespace cs
 			std::pair<double, double> cameraSize,
 			composite::RawCompositeImage* image, sky::PointLightSource* lightSource, int lightCounter)
 		{
-			std::string lightName = "Light ";
+			std::string lightName = "Light (Point) ";
 			lightName += std::to_string(lightCounter);
 
 			composite::FolderLayer<composite::RawImage>* lightFolder =
@@ -148,6 +152,124 @@ namespace cs
 
 			return distanceVec.first * distanceVec.first +
 				distanceVec.second * distanceVec.second;
+		}
+
+		void CompositeCamera::CaptureTextureLight(sky::Sky* sky, std::pair<double, double> cameraPos,
+			std::pair<double, double> cameraSize, composite::RawCompositeImage* image,
+			sky::TextureLightSource* lightSource, int lightCounter)
+		{
+			std::string lightName = "Light (Texture) ";
+			lightName += std::to_string(lightCounter);
+
+			composite::FolderLayer<composite::RawImage>* lightFolder =
+				new composite::FolderLayer<composite::RawImage>
+				(lightName, composite::BlendingMode::CS_SCREEN);
+
+			std::pair<int, int> absolutePos{
+				std::trunc((lightSource->pos.first - cameraPos.first) / cameraSize.first * resolutionPx.first),
+				std::trunc((lightSource->pos.second - cameraPos.second) / cameraSize.second * resolutionPx.second) };
+			std::pair<int, int> absoluteSize{
+				std::trunc(lightSource->size.first / cameraSize.first * resolutionPx.first),
+				std::trunc(lightSource->size.second / cameraSize.second * resolutionPx.second) };
+
+			composite::RawImage lightImage = composite::RawImage(image->colorSpectrum,
+				image->limitedDynamicRange, image->dynamicRange, absoluteSize);
+
+			CapturePureTextureLightImage(lightImage, lightSource->texture);
+
+			composite::ImageLayer<composite::RawImage>* lightLayer =
+				new composite::ImageLayer<composite::RawImage>
+				("Light image", composite::BlendingMode::CS_NORMAL);
+
+			lightLayer->offset = absolutePos;
+			lightLayer->SetImage(&lightImage);
+
+			lightFolder->layers->push_back(lightLayer);
+
+			//Theoretically a red filter is supposed to be here
+
+			image->PushLayer(lightFolder);
+		}
+
+		void CompositeCamera::CapturePureTextureLightImage(
+			composite::RawImage& lightImage, composite::RawImage& lightSourceTexture)
+		{
+			for (int row = 0; row < lightImage.resolutionPx.second; row++)
+				for (int col = 0; col < lightImage.resolutionPx.first; col++)
+				{
+					std::pair<double, double> texturePos{
+						col / lightImage.resolutionPx.first * lightSourceTexture.resolutionPx.first,
+						col / lightImage.resolutionPx.second * lightSourceTexture.resolutionPx.second,
+					};
+					
+					WriteTextureLightPixelColor(lightImage, lightSourceTexture,
+						texturePos, col, row);
+
+					WriteTextureLightPixelAlpha(lightImage, lightSourceTexture,
+						texturePos, col, row);
+				}
+		}
+
+		void CompositeCamera::WriteTextureLightPixelColor(
+			composite::RawImage& lightImage, composite::RawImage& lightSourceTexture, 
+			std::pair<double, double> texturePos, int col, int row)
+		{
+			std::pair<unsigned int, unsigned int> pixel00Pos{
+				std::trunc(texturePos.first), std::trunc(texturePos.second) };
+			std::pair<unsigned int, unsigned int> pixel11Pos{
+				pixel00Pos.first + 1, pixel00Pos.second + 1 };
+
+			if (pixel00Pos.first + 1 < lightSourceTexture.resolutionPx.first)
+				pixel11Pos.first = pixel00Pos.first;
+			if (pixel00Pos.second + 1 < lightSourceTexture.resolutionPx.second)
+				pixel11Pos.second = pixel00Pos.second;
+
+			std::vector<double> pixel00color = lightSourceTexture.image
+				[pixel00Pos.second * lightSourceTexture.resolutionPx.first + pixel00Pos.first];
+			std::vector<double> pixel10color = lightSourceTexture.image
+				[pixel00Pos.second * lightSourceTexture.resolutionPx.first + pixel11Pos.first];
+			std::vector<double> pixel01color = lightSourceTexture.image
+				[pixel11Pos.second * lightSourceTexture.resolutionPx.first + pixel00Pos.first];
+			std::vector<double> pixel11color = lightSourceTexture.image
+				[pixel11Pos.second * lightSourceTexture.resolutionPx.first + pixel11Pos.first];
+
+			std::vector<double> color{};
+			for (int i = 0; i < pixel00color.size(); i++)
+				color.push_back(math_tools::Interpolator::LinearInterpolate2f(
+					pixel00color[i], pixel10color[i], pixel01color[i], pixel11color[i],
+					texturePos.first - pixel00Pos.first, texturePos.second - pixel00Pos.second));
+
+			lightImage.image[row * lightImage.resolutionPx.second + col] = color;
+		}
+
+		void CompositeCamera::WriteTextureLightPixelAlpha(
+			composite::RawImage& lightImage, composite::RawImage& lightSourceTexture,
+			std::pair<double, double> texturePos, int col, int row)
+		{
+			std::pair<unsigned int, unsigned int> pixel00Pos{
+				std::trunc(texturePos.first), std::trunc(texturePos.second) };
+			std::pair<unsigned int, unsigned int> pixel11Pos{
+				pixel00Pos.first + 1, pixel00Pos.second + 1 };
+
+			if (pixel00Pos.first + 1 < lightSourceTexture.resolutionPx.first)
+				pixel11Pos.first = pixel00Pos.first;
+			if (pixel00Pos.second + 1 < lightSourceTexture.resolutionPx.second)
+				pixel11Pos.second = pixel00Pos.second;
+
+			double pixel00alpha = lightSourceTexture.alpha
+				[pixel00Pos.second * lightSourceTexture.resolutionPx.first + pixel00Pos.first];
+			double pixel10alpha = lightSourceTexture.alpha
+				[pixel00Pos.second * lightSourceTexture.resolutionPx.first + pixel11Pos.first];
+			double pixel01alpha = lightSourceTexture.alpha
+				[pixel11Pos.second * lightSourceTexture.resolutionPx.first + pixel00Pos.first];
+			double pixel11alpha = lightSourceTexture.alpha
+				[pixel11Pos.second * lightSourceTexture.resolutionPx.first + pixel11Pos.first];
+
+			double alpha = math_tools::Interpolator::LinearInterpolate2f(
+				pixel00alpha, pixel10alpha, pixel01alpha, pixel11alpha,
+				texturePos.first - pixel00Pos.first, texturePos.second - pixel00Pos.second);
+
+			lightImage.alpha[row * lightImage.resolutionPx.second + col] = alpha;
 		}
 
 		void CompositeCamera::CaptureAtmosphereAmbience(

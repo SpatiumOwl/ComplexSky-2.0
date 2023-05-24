@@ -35,6 +35,21 @@ namespace cs
 
 			double GetDistanceSquared(std::pair<double, double> pos1, std::pair<double, double> pos2);
 
+			void CaptureTextureLight(sky::Sky* sky, std::pair<double, double> cameraPos,
+				std::pair<double, double> cameraSize, composite::RawCompositeImage* image,
+				sky::TextureLightSource* lightSource, int lightCounter);
+
+			void CapturePureTextureLightImage(
+				composite::RawImage& lightImage, composite::RawImage& lightSourceTexture);
+
+			void WriteTextureLightPixelColor(
+				composite::RawImage& lightImage, composite::RawImage& lightSourceTexture,
+				std::pair<double, double> texturePos, int col, int row);
+
+			void WriteTextureLightPixelAlpha(
+				composite::RawImage& lightImage, composite::RawImage& lightSourceTexture,
+				std::pair<double, double> texturePos, int col, int row);
+
 			void CaptureAtmosphereAmbience(sky::Sky* sky, std::pair<double, double> cameraPos,
 				std::pair<double, double> cameraSize, composite::RawCompositeImage* image);
 
