@@ -16,7 +16,7 @@ namespace cs
 			virtual composite::RawImage* ImportTexture(std::string path, std::pair<double, double> dynamicRange) = 0;
 
 		protected:
-			composite::RawImage* ImportImage(std::string path, std::pair<double, double> dynamicRange);
+			static composite::RawImage* ImportImage(std::string path, std::pair<double, double> dynamicRange);
 		};
 	}
 }

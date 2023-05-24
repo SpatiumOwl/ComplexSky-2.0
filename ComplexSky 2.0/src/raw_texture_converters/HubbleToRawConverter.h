@@ -14,7 +14,7 @@ namespace cs
 		class HubbleToRawConverter : Converter
 		{
 		public:
-			inline composite::RawImage* ImportTexture(std::string path, std::pair<double, double> dynamicRange)
+			static inline composite::RawImage* ImportTexture(std::string path, std::pair<double, double> dynamicRange)
 			{
 				composite::RawImage* texture = ImportImage(path, dynamicRange);
 
