@@ -71,19 +71,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\vendor\;$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Libraries\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\vendor\;$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Libraries\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\vendor\;$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Libraries\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ComplexSky 2.0\src\vendor\;$(SolutionDir)ComplexSky 2.0\src\;C:\Libraries\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Libraries\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -165,6 +165,26 @@
   <ItemGroup>
     <ClCompile Include="src\exporters\PSDExporter.cpp" />
     <ClCompile Include="src\raw_texture_converters\Converter.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdAllocator.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdBlendMode.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdColorMode.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdDecompressRle.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdExport.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdFile.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdFixedSizeString.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdInterleave.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdLayerCanvasCopy.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdMallocAllocator.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\Psdminiz.c" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdNativeFile.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdParseColorModeDataSection.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdParseDocument.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdParseImageDataSection.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdParseImageResourcesSection.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdParseLayerMaskSection.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdPch.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdSyncFileReader.cpp" />
+    <ClCompile Include="src\vendor\psd_sdk-master\PsdSyncFileWriter.cpp" />
     <ClCompile Include="TestSamples.cpp" />
     <ClCompile Include="src\composite\RawCompositeImage.cpp" />
     <ClCompile Include="src\composite_camera\CompositeCamera.cpp" />
@@ -179,6 +199,7 @@
     <ClCompile Include="src\math_tools\PerlinNoiseGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\exporters\PSDExporter.h" />
     <ClInclude Include="src\math_tools\Integrator.h" />
     <ClInclude Include="src\color_spectrum\ColorSpectrumChannel.h" />
     <ClInclude Include="src\math_tools\Interpolator.h" />
@@ -190,7 +211,6 @@
     <ClInclude Include="src\math_tools\PerlinNoiseGenerator.h" />
     <ClInclude Include="src\composite_processing\Raw3c1aToRGBAConverter.h" />
     <ClInclude Include="src\composite_processing\RGBACompositeImage.h" />
-    <ClInclude Include="src\exporters\PSDExporter.h" />
     <ClInclude Include="src\exporters\RGBAComposer.h" />
     <ClInclude Include="src\raw_texture_converters\Converter.h" />
     <ClInclude Include="src\raw_texture_converters\HubbleToRawConverter.h" />
@@ -202,7 +222,74 @@
     <ClInclude Include="src\color_spectrum\ColorSpectrum.h" />
     <ClInclude Include="src\color_spectrum\ColorSpectrumConverter.h" />
     <ClInclude Include="src\color_spectrum\ColorSpectrumDB.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\Psd.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdAllocator.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdAlphaChannel.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdAssert.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdBitUtil.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdBlendMode.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdChannel.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdChannelType.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdColorMode.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdColorModeDataSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdCompilerMacros.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdCompressionType.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdDecompressRle.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdDocument.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdDocumentation.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdEndianConversion.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdExport.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdExportChannel.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdExportColorMode.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdExportDocument.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdExportLayer.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdExportMetaDataAttribute.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdFile.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdFixedSizeString.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdImageDataSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdImageResourcesSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdImageResourceType.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdInterleave.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\Psdinttypes.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\Psdispod.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\Psdisunsigned.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdKey.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdLayer.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdLayerCanvasCopy.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdLayerMask.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdLayerMaskSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdLayerType.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdLog.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdMallocAllocator.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdMemoryUtil.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\Psdminiz.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdNamespace.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdNativeFile.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdParseColorModeDataSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdParseDocument.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdParseImageDataSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdParseImageResourcesSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdParseLayerMaskSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdPch.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdPlanarImage.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdPlatform.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdSection.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\Psdstdint.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdSyncFileReader.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdSyncFileUtil.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdSyncFileWriter.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdThumbnail.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdTypes.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdUnionCast.h" />
+    <ClInclude Include="src\vendor\psd_sdk-master\PsdVectorMask.h" />
     <ClInclude Include="TestSamples.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\vendor\psd_sdk-master\PsdBitUtil.inl" />
+    <None Include="src\vendor\psd_sdk-master\PsdEndianConversion.inl" />
+    <None Include="src\vendor\psd_sdk-master\PsdMemoryUtil.inl" />
+    <None Include="src\vendor\psd_sdk-master\PsdSyncFileUtil.inl" />
+    <None Include="src\vendor\psd_sdk-master\PsdUnionCast.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
