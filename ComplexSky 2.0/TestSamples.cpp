@@ -7,7 +7,9 @@
 #include "composite_camera/CompositeCamera.h"
 #include "composite_processing/Raw3c1aToRGBAConverter.h"
 #include "exporters/RGBAComposer.h"
+#include "exporters/PSDExporter.h"
 #include "raw_texture_converters/HubbleToRawConverter.h"
+#include "raw_texture_converters/RGBAToRawConverter.h"
 #include "TestSamples.h"
 
 using namespace cs;
@@ -131,12 +133,11 @@ void AddPointLights0(cs::color_spectrum::ColorSpectrumDB* db, cs::sky::Sky& sky)
 void AddTextureLights0(cs::color_spectrum::ColorSpectrumDB* db, cs::sky::Sky& sky)
 {
     sky::TextureLightSource* galaxy = new sky::TextureLightSource();
-    galaxy->colorSpectrum = db->GetSpectrum("Hubble");
     galaxy->texture = rtc::HubbleToRawConverter::ImportTexture(
         "D:\\Education\\Bachelor Diploma\\ComplexSky 2.0\\ComplexSky 2.0\\res\\Galaxy_0.png",
         std::pair<double, double>(0, 0.5));
     galaxy->pos = std::pair<double, double>(-1, -0.5);
-    galaxy->size = std::pair<double, double>(2, 1.3);
+    galaxy->size = std::pair<double, double>(4, 2.6);
 
     sky.lightSources.push_back(galaxy);
 }
@@ -171,6 +172,9 @@ int main()
 
     exporters::RGBAComposer::ExportImage(rgbaImage,
         "D:\\Education\\Bachelor Diploma\\Test Results\\0_rgb.png");
+
+    exporters::PSDExporter::ExportPSD(rgbaImage,
+        "D:\\Education\\Bachelor Diploma\\Test Results\\0_rgb.psd");
 
     /*camera.dynamicRange = std::pair<double, double>(0.5, 1.5);
 

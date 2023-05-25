@@ -173,7 +173,8 @@ namespace cs
 				std::trunc(lightSource->size.second / cameraSize.second * resolutionPx.second) };
 
 			composite::RawImage lightImage = composite::RawImage(image->colorSpectrum,
-				image->limitedDynamicRange, image->dynamicRange, absoluteSize);
+				lightSource->texture->limitedDynamicRange, lightSource->texture->dynamicRange, 
+				absoluteSize);
 
 			CapturePureTextureLightImage(lightImage, *(lightSource->texture));
 
@@ -198,8 +199,8 @@ namespace cs
 				for (int col = 0; col < lightImage.resolutionPx.first; col++)
 				{
 					std::pair<double, double> texturePos{
-						col / lightImage.resolutionPx.first * lightSourceTexture.resolutionPx.first,
-						row / lightImage.resolutionPx.second * lightSourceTexture.resolutionPx.second,
+						(double)col / lightImage.resolutionPx.first * lightSourceTexture.resolutionPx.first,
+						(double)row / lightImage.resolutionPx.second * lightSourceTexture.resolutionPx.second,
 					};
 					
 					WriteTextureLightPixelColor(lightImage, lightSourceTexture,
@@ -207,6 +208,7 @@ namespace cs
 
 					WriteTextureLightPixelAlpha(lightImage, lightSourceTexture,
 						texturePos, col, row);
+
 				}
 		}
 
@@ -247,8 +249,9 @@ namespace cs
 			color_spectrum::ColorSpectrumConverter* converter = colorSpectrumDB->GetConverter(
 				lightSourceTexture.colorSpectrum->name, lightImage.colorSpectrum->name);
 
-			lightImage.image[row * lightImage.resolutionPx.second + col] = 
-				converter->ConvertRaw(&color);
+			std::vector<double> finalColor = converter->ConvertRaw(&color);
+			
+			lightImage.image[row * lightImage.resolutionPx.first + col] = finalColor;
 		}
 
 		void CompositeCamera::WriteTextureLightPixelAlpha(
@@ -278,7 +281,7 @@ namespace cs
 				pixel00alpha, pixel10alpha, pixel01alpha, pixel11alpha,
 				texturePos.first - pixel00Pos.first, texturePos.second - pixel00Pos.second);
 
-			lightImage.alpha[row * lightImage.resolutionPx.second + col] = alpha;
+			lightImage.alpha[row * lightImage.resolutionPx.first + col] = alpha;
 		}
 
 		void CompositeCamera::CaptureAtmosphereAmbience(
