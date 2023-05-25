@@ -27,18 +27,18 @@ namespace cs
 		struct PointLightSource : public ColoredLightSource
 		{
 			std::pair<double, double> pos;
-			LightSourceType type = LightSourceType::CS_POINT;
+			inline PointLightSource() {type = LightSourceType::CS_POINT;}
 		};
 		struct AmbientLightSource : public ColoredLightSource
-		{
-			LightSourceType type = LightSourceType::CS_AMBIENT;
+		{ 
+			inline AmbientLightSource() { type = LightSourceType::CS_AMBIENT; }
 		};
 		struct TextureLightSource : public LightSource
 		{
 			composite::RawImage* texture;
 			std::pair<double, double> pos;
 			std::pair<double, double> size;
-			LightSourceType type = LightSourceType::CS_TEXTURE;
+			inline TextureLightSource() { type = LightSourceType::CS_TEXTURE; }
 		};
 	}
 }
