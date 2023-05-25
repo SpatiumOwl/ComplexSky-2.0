@@ -70,11 +70,11 @@ namespace cs
 			cv::Mat4d* result = new cv::Mat4d(rawImage->resolutionPx.second, 
 				rawImage->resolutionPx.first, CV_32FC4);
 
-			for (int i = 0; i < result->rows; i++)
-				for (int j = 0; j < result->cols; j++)
+			for (int row = 0; row < result->rows; row++)
+				for (int col = 0; col < result->cols; col++)
 				{
-					std::vector<double> colorPixel = rawImage->image[i*result->cols + j];
-					double alpha = rawImage->alpha[i * result->cols + j];
+					std::vector<double> colorPixel = rawImage->image[row*result->cols + col];
+					double alpha = rawImage->alpha[row * result->cols + col];
 
 					//OpenCV uses BGRA, but RawImage uses RGBA
 					cv::Vec4d resultPixel = cv::Vec4d(
@@ -93,15 +93,8 @@ namespace cs
 					if (resultPixel[2] < 0) resultPixel[2] = 0;
 					if (resultPixel[2] > 1) resultPixel[2] = 1;
 
-					result->at<cv::Vec4d>(j, i) = resultPixel;
-
-					if (i == 300 && j == 300)
-						int a = 5;
+					result->at<cv::Vec4d>(row, col) = resultPixel;
 				}
-
-			cv::Vec4d a = result->at<cv::Vec4d>(0, 0);
-			cv::Vec4d b = result->at<cv::Vec4d>(300, 300);
-			cv::Vec4d c = result->at<cv::Vec4d>(500, 500);
 
 			return result;
 		}

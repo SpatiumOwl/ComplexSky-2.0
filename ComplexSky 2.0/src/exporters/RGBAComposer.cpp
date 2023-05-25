@@ -72,7 +72,7 @@ namespace cs
 
 			for (int i = 0; i < result->rows; i++)
 				for (int j = 0; j < result->cols; j++)
-					result->at<cv::Vec4d>(j, i) = BlendPixels(source, destination, i, j, localOffset);
+					result->at<cv::Vec4d>(i, j) = BlendPixels(source, destination, i, j, localOffset);
 
 			destination->SetImage(result);
 			destination->offset = localOffset;

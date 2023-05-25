@@ -199,7 +199,7 @@ namespace cs
 				{
 					std::pair<double, double> texturePos{
 						col / lightImage.resolutionPx.first * lightSourceTexture.resolutionPx.first,
-						col / lightImage.resolutionPx.second * lightSourceTexture.resolutionPx.second,
+						row / lightImage.resolutionPx.second * lightSourceTexture.resolutionPx.second,
 					};
 					
 					WriteTextureLightPixelColor(lightImage, lightSourceTexture,
@@ -235,11 +235,20 @@ namespace cs
 
 			std::vector<double> color{};
 			for (int i = 0; i < pixel00color.size(); i++)
+			{
 				color.push_back(math_tools::Interpolator::LinearInterpolate2f(
 					pixel00color[i], pixel10color[i], pixel01color[i], pixel11color[i],
 					texturePos.first - pixel00Pos.first, texturePos.second - pixel00Pos.second));
+			}
 
-			lightImage.image[row * lightImage.resolutionPx.second + col] = color;
+			color_spectrum::ColorSpectrumDB* colorSpectrumDB =
+				color_spectrum::ColorSpectrumDB::GetInstance();
+
+			color_spectrum::ColorSpectrumConverter* converter = colorSpectrumDB->GetConverter(
+				lightSourceTexture.colorSpectrum->name, lightImage.colorSpectrum->name);
+
+			lightImage.image[row * lightImage.resolutionPx.second + col] = 
+				converter->ConvertRaw(&color);
 		}
 
 		void CompositeCamera::WriteTextureLightPixelAlpha(
