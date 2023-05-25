@@ -5,11 +5,12 @@ namespace cs
 	namespace rtc
 	{
 		composite::RawImage* Converter::ImportImage(
-			std::string path, std::pair<double, double> dynamicRange)
+			std::string path, std::pair<double, double> dynamicRange, int colorChannelNumber)
 		{
 			cv::Mat rgb8Image = cv::imread(path, 0);
 			composite::RawImage* image = new composite::RawImage(
-				true, dynamicRange, std::pair<uint, uint>(rgb8Image.cols, rgb8Image.rows));
+				true, dynamicRange, std::pair<uint, uint>(rgb8Image.cols, rgb8Image.rows), 
+				colorChannelNumber);
 
 			for (int row = 0; row < rgb8Image.rows; row++)
 				for (int col = 0; col < rgb8Image.cols; col++)

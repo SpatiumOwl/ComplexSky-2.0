@@ -32,7 +32,8 @@ namespace cs
 			}
 			inline RawImage(bool _limitedDynamicRange,
 				std::pair<double, double> _dynamicRange,
-				std::pair<unsigned int, unsigned int> _resolutionPx)
+				std::pair<unsigned int, unsigned int> _resolutionPx,
+				int colorChannelNumber)
 			{
 				limitedDynamicRange = _limitedDynamicRange;
 				dynamicRange = _dynamicRange;
@@ -40,7 +41,7 @@ namespace cs
 
 				alpha = std::vector<double>(resolutionPx.first * resolutionPx.second, 1);
 				image = std::vector<std::vector<double>>(resolutionPx.first * resolutionPx.second,
-					std::vector<double>(colorSpectrum->colorChannels.size(), 0));
+					std::vector<double>(colorChannelNumber, 0));
 			}
 			inline RawImage() {}
 		};
