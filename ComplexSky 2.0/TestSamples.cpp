@@ -14,12 +14,12 @@ using namespace cs;
 
 void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
 {
-    color_spectrum::ColorSpectrum rgb;
-    rgb.name = "RGB";
+    color_spectrum::ColorSpectrum* rgb = new color_spectrum::ColorSpectrum();
+    rgb->name = "RGB";
 
-    color_spectrum::ColorSpectrumChannel red;
-    red.distanceBetweenValues = 25;
-    red.func = std::vector<double>{
+    color_spectrum::ColorSpectrumChannel* red = new color_spectrum::ColorSpectrumChannel();
+    red->distanceBetweenValues = 25;
+    red->func = std::vector<double>{
         0, 0, 0, 0,
         0, 0, 0, 0,
         0, 0, 0, 0,
@@ -28,11 +28,11 @@ void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
         6, 10, 1, 30,
         75, 50, 30, 3,
         0 };
-    rgb.colorChannels.push_back(red);
+    rgb->colorChannels.push_back(*red);
 
-    color_spectrum::ColorSpectrumChannel green;
-    green.distanceBetweenValues = 25;
-    green.func = std::vector<double>{
+    color_spectrum::ColorSpectrumChannel* green = new color_spectrum::ColorSpectrumChannel();
+    green->distanceBetweenValues = 25;
+    green->func = std::vector<double>{
         0, 0, 0, 0,
         0, 0, 0, 0,
         0, 0, 0, 0,
@@ -40,27 +40,27 @@ void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
         0, 9, 15, 38,
         50, 90, 100, 50,
         10, 3, 1, 0 };
-    rgb.colorChannels.push_back(green);
+    rgb->colorChannels.push_back(*green);
 
-    color_spectrum::ColorSpectrumChannel blue;
-    blue.distanceBetweenValues = 25;
-    blue.func = std::vector<double>{
+    color_spectrum::ColorSpectrumChannel* blue = new color_spectrum::ColorSpectrumChannel();
+    blue->distanceBetweenValues = 25;
+    blue->func = std::vector<double>{
         0, 0, 0, 0,
         0, 0, 0, 0,
         0, 0, 0, 0,
         0, 0, 0, 0,
         0, 30, 85, 95,
         50, 9, 1, 0 };
-    rgb.colorChannels.push_back(blue);
+    rgb->colorChannels.push_back(*blue);
 
-    db->AddSpectrum(&rgb);
+    db->AddSpectrum(rgb);
 
-    color_spectrum::ColorSpectrum hubble;
-    hubble.name = "Hubble";
+    color_spectrum::ColorSpectrum* hubble = new color_spectrum::ColorSpectrum();
+    hubble->name = "Hubble";
 
-    color_spectrum::ColorSpectrumChannel s2;
-    s2.distanceBetweenValues = 12.5;
-    s2.func = std::vector<double>{
+    color_spectrum::ColorSpectrumChannel* s2 = new color_spectrum::ColorSpectrumChannel();
+    s2->distanceBetweenValues = 12.5;
+    s2->func = std::vector<double>{
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
@@ -70,11 +70,11 @@ void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
         0, 0, 0, 0, 0, 2, 90, 2,
         0
     };
-    hubble.colorChannels.push_back(s2);
+    hubble->colorChannels.push_back(*s2);
 
-    color_spectrum::ColorSpectrumChannel ha;
-    ha.distanceBetweenValues = 12.5;
-    ha.func = std::vector<double>{
+    color_spectrum::ColorSpectrumChannel* ha = new color_spectrum::ColorSpectrumChannel();
+    ha->distanceBetweenValues = 12.5;
+    ha->func = std::vector<double>{
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
@@ -83,11 +83,11 @@ void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 2, 90, 2, 0,
     };
-    hubble.colorChannels.push_back(ha);
+    hubble->colorChannels.push_back(*ha);
 
-    color_spectrum::ColorSpectrumChannel o3;
-    o3.distanceBetweenValues = 12.5;
-    o3.func = std::vector<double>{
+    color_spectrum::ColorSpectrumChannel* o3 = new color_spectrum::ColorSpectrumChannel();
+    o3->distanceBetweenValues = 12.5;
+    o3->func = std::vector<double>{
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
@@ -95,9 +95,9 @@ void AddSpectrums(cs::color_spectrum::ColorSpectrumDB* db)
         0, 0, 0, 0, 0, 0, 0, 2,
         90, 2, 0
     };
-    hubble.colorChannels.push_back(o3);
+    hubble->colorChannels.push_back(*o3);
 
-    db->AddSpectrum(&hubble);
+    db->AddSpectrum(hubble);
 }
 
 void InitializeSky0(cs::sky::Sky& sky)
