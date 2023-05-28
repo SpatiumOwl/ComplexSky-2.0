@@ -326,7 +326,7 @@ namespace cs
 		{
 			composite::RawImage* ambienceImage = new composite::RawImage(targetSpectrum, limitDynamicRange, dynamicRange, resolutionPx);
 
-			std::vector<double> amColor = CalculateNormalizedAmbientColor(sky);
+			std::vector<double> amColor = CalculateAtmosphereAmbientColor(sky);
 
 			for (auto pixel = ambienceImage->image.begin(); pixel != ambienceImage->image.end(); pixel++)
 				*pixel = amColor;
